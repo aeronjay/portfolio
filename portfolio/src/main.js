@@ -7,6 +7,7 @@ import '../styles/index.css';
 import '../styles/layout.css';
 import '../styles/components.css';
 import '../styles/animations.css';
+import '../styles/project-page.css';
 
 import { initTheme } from './theme.js';
 import { initScrollReveal } from './animations.js';
