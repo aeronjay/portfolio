@@ -1,0 +1,75 @@
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+/* --- Scroll reveal: elements start hidden, appear on viewport entry --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal--stagger > .reveal {
+  transition-delay: calc(var(--reveal-i, 0) * 80ms);
+}
+
+/* --- Hero entrance animation --- */
+.hero-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-enter var(--duration-slow) var(--ease-out) forwards;
+}
+
+.hero-reveal--1 { animation-delay: 0ms; }
+.hero-reveal--2 { animation-delay: 120ms; }
+.hero-reveal--3 { animation-delay: 240ms; }
+.hero-reveal--4 { animation-delay: 360ms; }
+
+@keyframes hero-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+  }
+}

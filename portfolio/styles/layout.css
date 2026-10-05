@@ -1,0 +1,118 @@
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+
+/* --- Page wrapper --- */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1;
+}
+
+/* --- Responsive grid --- */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.grid--3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Two-column layout (content + sidebar) --- */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .layout-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-split {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* --- Stack (vertical flow) --- */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack--sm  { gap: var(--space-3); }
+.stack--md  { gap: var(--space-6); }
+.stack--lg  { gap: var(--space-10); }
+.stack--xl  { gap: var(--space-16); }
+
+/* --- Inline flow --- */
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inline--sm { gap: var(--space-2); }
+.inline--md { gap: var(--space-4); }
+.inline--lg { gap: var(--space-6); }
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--content-px);
+  padding-right: var(--content-px);
+}
+
+/* --- Section spacing variants --- */
+.section--sm {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.section--hero {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-20);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .section--hero {
+    min-height: 85vh;
+  }
+}
