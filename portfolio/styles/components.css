@@ -68,10 +68,6 @@
   .nav__links {
     display: flex;
   }
-
-  .nav__toggle {
-    display: none;
-  }
 }
 
 /* --- Mobile nav toggle --- */
@@ -122,6 +118,12 @@
 
 .nav__toggle[aria-expanded="true"] .nav__toggle-icon::after {
   transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
 }
 
 /* --- Mobile menu --- */
