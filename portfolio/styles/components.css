@@ -104,8 +104,13 @@
   transition: transform var(--duration-normal) var(--ease-out);
 }
 
-.nav__toggle-icon::before { top: -6px; }
-.nav__toggle-icon::after  { top: 6px; }
+.nav__toggle-icon::before {
+  top: -6px;
+}
+
+.nav__toggle-icon::after {
+  top: 6px;
+}
 
 /* Open state */
 .nav__toggle[aria-expanded="true"] .nav__toggle-icon {
@@ -441,7 +446,7 @@
 }
 
 /* Separator between skills */
-.skill-item + .skill-item::before {
+.skill-item+.skill-item::before {
   content: '·';
   margin-right: var(--space-2);
   color: var(--color-text-muted);
@@ -478,6 +483,7 @@
     opacity: 0;
     transform: translateX(-50%) translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -516,6 +522,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  transform: scale(2.3);
+  /* Adjust this: 1.1 is slight zoom, 1.25 is more */
+  object-position: center -40%;
+  /* Optional: shifts focus up towards your face */
+
 }
 
 /* --- Footer --- */
