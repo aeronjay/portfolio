@@ -343,70 +343,178 @@
   border: 1px solid var(--color-border);
 }
 
-/* --- Experience item --- */
-.exp-item {
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.exp-item:first-child {
-  padding-top: 0;
-}
-
-.exp-item:last-child {
-  border-bottom: none;
-}
-
-.exp-item__header {
+/* --- Experience Timeline --- */
+.exp-timeline {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  margin-bottom: var(--space-3);
-}
-
-@media (min-width: 640px) {
-  .exp-item__header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-}
-
-.exp-item__role {
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 600;
-}
-
-.exp-item__company {
-  color: var(--color-text-muted);
-}
-
-.exp-item__date {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  white-space: nowrap;
-}
-
-.exp-item__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.exp-item__list li {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  padding-left: var(--space-4);
   position: relative;
 }
 
-.exp-item__list li::before {
-  content: '–';
-  position: absolute;
-  left: 0;
-  color: var(--color-border);
+.exp-timeline__item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: var(--space-4);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .exp-timeline__item {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.exp-timeline__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.exp-timeline__badge {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  z-index: 2;
+  transition:
+    border-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    background-color var(--duration-fast) var(--ease-in-out);
+}
+
+@media (min-width: 640px) {
+  .exp-timeline__badge {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+  }
+}
+
+.exp-timeline__item:hover .exp-timeline__badge {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.exp-timeline__line {
+  width: 1px;
+  flex: 1 1 0%;
+  background-color: var(--color-border);
+  margin-top: var(--space-2);
+}
+
+.exp-timeline__item:last-child .exp-timeline__line {
+  display: none;
+}
+
+.exp-timeline__content {
+  padding-bottom: var(--space-10);
+}
+
+@media (min-width: 640px) {
+  .exp-timeline__content {
+    padding-bottom: var(--space-12);
+  }
+}
+
+.exp-timeline__item:last-child .exp-timeline__content {
+  padding-bottom: 0;
+}
+
+.exp-timeline__header {
+  margin-bottom: var(--space-2);
+}
+
+.exp-timeline__company {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.exp-timeline__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.exp-timeline__role-block {
+  margin-top: var(--space-3);
+}
+
+.exp-timeline__role {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+.exp-timeline__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.exp-timeline__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.exp-timeline__body p {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.exp-timeline__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.exp-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 3px 10px;
+  line-height: 1.4;
+  transition:
+    border-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    background-color var(--duration-fast) var(--ease-in-out);
+}
+
+.exp-tag:hover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background-color: var(--color-surface);
 }
 
 /* --- Skills grid --- */
