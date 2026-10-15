@@ -104,8 +104,8 @@
 
 .section--hero {
   position: relative;
-  padding-top: var(--space-32);
-  padding-bottom: var(--space-8);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
