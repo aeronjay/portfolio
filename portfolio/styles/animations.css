@@ -31,7 +31,9 @@
 .hero-reveal--1 { animation-delay: 0ms; }
 .hero-reveal--2 { animation-delay: 120ms; }
 .hero-reveal--3 { animation-delay: 240ms; }
-.hero-reveal--4 { animation-delay: 360ms; }
+.hero-reveal--3b { animation-delay: 300ms; }
+.hero-reveal--4 { animation-delay: 400ms; }
+.hero-reveal--5 { animation-delay: 550ms; }
 
 @keyframes hero-enter {
   to {
