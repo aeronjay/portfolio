@@ -402,7 +402,8 @@
   }
 }
 
-.exp-timeline__item:hover .exp-timeline__badge {
+.exp-timeline__badge--current,
+.exp-timeline__item--current .exp-timeline__badge {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
