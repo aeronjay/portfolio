@@ -38,10 +38,26 @@
   color: var(--color-text);
   text-decoration: none;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav__name:hover {
   color: var(--color-text);
+}
+
+.nav__logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: var(--color-logo-filter);
+  transition: opacity var(--duration-fast) var(--ease-in-out),
+              filter var(--duration-normal) var(--ease-in-out);
+}
+
+.nav__name:hover .nav__logo {
+  opacity: 0.8;
 }
 
 .nav__links {
