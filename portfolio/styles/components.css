@@ -691,6 +691,14 @@
   margin-bottom: 0;
 }
 
+.currently__updated {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+}
+
 /* --- How I Work Principles --- */
 .principles-grid {
   display: grid;

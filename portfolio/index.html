@@ -15,17 +15,36 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Aeron Jay Bulatao · Software Engineer">
   <meta property="og:description" content="Software Engineer at Paynamics. Building software that works.">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="/og-image.png">
+  <meta property="og:url" content="https://aeronjay.me/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aeron Jay Bulatao · Software Engineer">
   <meta name="twitter:description" content="Software Engineer at Paynamics. Building software that works.">
-  <meta name="twitter:image" content="/og-image.png">
+  <meta name="twitter:image" content="https://aeronjay.me/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aeron Jay Bulatao",
+    "url": "https://aeronjay.me/",
+    "image": "https://aeronjay.me/profile.jpg",
+    "jobTitle": "Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "Paynamics Technologies Inc." },
+    "address": { "@type": "PostalAddress", "addressCountry": "PH" },
+    "email": "mailto:bulataoaeronjay@gmail.com",
+    "sameAs": [
+      "https://github.com/aeronjay/",
+      "https://www.linkedin.com/in/bulataoaeronjay/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -208,18 +227,18 @@
                 </header>
 
                 <div class="exp-timeline__role-block">
-                  <h4 class="exp-timeline__role">Junior Software Engineer</h4>
-                  <div class="exp-timeline__date">JUL 2026 – PRESENT · 4 MOS</div>
+                  <h4 class="exp-timeline__role">Software Engineer</h4>
+                  <div class="exp-timeline__date">JUL 2026 – PRESENT · <span data-duration-since="2026-07">4 MOS</span></div>
 
                   <div class="exp-timeline__body">
-                    <p>Develop and maintain high-availability payment gateway APIs and backend services using Kotlin
-                      (Javalin) and Java (Spring Boot) to process mission-critical transactions.</p>
-                    <p>Integrate new partner payment channels and merchant checkout endpoints, enforcing strict contract
-                      validation, data integrity, and persistent logging across PostgreSQL and MongoDB.</p>
-                    <p>Build resilient payment workflows and robust error-recovery mechanisms across core financial
-                      pipelines, optimizing API latency and minimizing transaction drop-offs.</p>
-                    <p>Collaborate across the stack using React/TypeScript and AWS to deliver internal merchant tools
-                      and automated operational workflows.</p>
+                    <p>Build and maintain payment gateway APIs and backend services in Kotlin (Javalin) and Java
+                      (Spring Boot) that process merchant transactions.</p>
+                    <p>Integrate new partner payment channels and merchant checkout endpoints, validating every request
+                      against its contract and persisting transaction records across PostgreSQL and MongoDB.</p>
+                    <p>Work on error handling in payment flows so failed or partial transactions are caught, logged,
+                      and recoverable instead of silently dropped.</p>
+                    <p>Contribute to internal merchant tools and operational workflows with React/TypeScript and
+                      AWS.</p>
                   </div>
 
                   <div class="exp-timeline__skills">
@@ -245,7 +264,7 @@
               <div class="exp-timeline__content">
                 <header class="exp-timeline__header">
                   <h3 class="exp-timeline__company">FPD Asia Property Services, Inc.</h3>
-                  <div class="exp-timeline__meta">Internship · 3 mos · Makati, NCR, Philippines · On-site</div>
+                  <div class="exp-timeline__meta">Internship · Makati, NCR, Philippines · On-site</div>
                 </header>
 
                 <div class="exp-timeline__role-block">
@@ -286,7 +305,7 @@
               <div class="exp-timeline__content">
                 <header class="exp-timeline__header">
                   <h3 class="exp-timeline__company">Private E-Commerce Client</h3>
-                  <div class="exp-timeline__meta">Freelance · 3 mos · Canada · Remote</div>
+                  <div class="exp-timeline__meta">Freelance · Canada · Remote</div>
                 </header>
 
                 <div class="exp-timeline__role-block">
@@ -338,18 +357,16 @@
 
             <span class="skills-grid__label">Backend</span>
             <div class="skills-grid__items">
-              <span class="skill-item">Kotlin (Javalin)</span>
-              <span class="skill-item">Java (Spring Boot)</span>
+              <span class="skill-item">Javalin</span>
+              <span class="skill-item">Spring Boot</span>
               <span class="skill-item">Node.js</span>
               <span class="skill-item">REST APIs</span>
-              <span class="skill-item">Django</span>
             </div>
 
             <span class="skills-grid__label">Frontend</span>
             <div class="skills-grid__items">
               <span class="skill-item">React</span>
               <span class="skill-item">Next.js</span>
-              <span class="skill-item">TypeScript</span>
               <span class="skill-item">HTML5 / CSS3</span>
             </div>
 
@@ -376,7 +393,6 @@
               <span class="skill-item">Playwright</span>
               <span class="skill-item">RAG</span>
               <span class="skill-item">FAISS</span>
-              <span class="skill-item">Transformers</span>
             </div>
           </div>
         </div>
@@ -410,8 +426,8 @@
               </div>
               <h3 class="currently-card__title">Backend Architecture &amp; Reliability</h3>
               <p class="currently-card__desc">
-                Focusing on distributed transaction integrity, contract validation, and fault-tolerant pipelines across
-                PostgreSQL and MongoDB.
+                Learning how payment systems stay consistent when things fail: idempotent requests, safe retries, and
+                keeping PostgreSQL and MongoDB records in agreement.
               </p>
             </div>
 
@@ -428,6 +444,8 @@
               </p>
             </div>
           </div>
+
+          <p class="currently__updated reveal">Last updated Oct 2026</p>
         </div>
       </section>
 
@@ -439,45 +457,45 @@
 
           <p class="reveal text-muted"
             style="max-width: 640px; font-size: var(--text-base); line-height: 1.7; margin-bottom: var(--space-8);">
-            I believe good engineering starts with respecting the real problem before choosing abstractions.
-            I design clear contracts upfront, build pragmatic systems, aggressively test failure paths,
-            and maintain complete ownership from commit to production.
+            I start from the real problem, pick the tool that fits it, test how it breaks, and stay with it until
+            it runs in production. Here's what that looked like on real work.
           </p>
 
           <div class="principles-grid reveal">
             <div class="principle-card">
               <span class="principle-card__num">01 / UNDERSTAND</span>
-              <h3 class="principle-card__title">Clarify the core constraint</h3>
+              <h3 class="principle-card__title">Find the actual cost</h3>
               <p class="principle-card__desc">
-                Before writing any code, I pin down the actual bottleneck, data schema, and edge cases. Solving the
-                wrong problem efficiently is still wasted velocity.
+                For an e-commerce client, the problem wasn't "scrape some sites". It was 5–8 hours of manual price
+                checks every week. That set the bar: the system had to run on a schedule, unattended.
               </p>
             </div>
 
             <div class="principle-card">
               <span class="principle-card__num">02 / BUILD</span>
-              <h3 class="principle-card__title">Pragmatic abstractions</h3>
+              <h3 class="principle-card__title">Structure that fits the problem</h3>
               <p class="principle-card__desc">
-                Choose the right tool for the job. Keep simple scripts simple, and build robust, strongly-typed
-                architectures when scale and team maintenance demand it.
+                Seven competitor sites meant seven different page layouts. I gave each site its own scraper module
+                behind a master dispatcher, so adding a competitor means adding a module, not editing working code.
               </p>
             </div>
 
             <div class="principle-card">
               <span class="principle-card__num">03 / BREAK &amp; FIX</span>
-              <h3 class="principle-card__title">Harden failure boundaries</h3>
+              <h3 class="principle-card__title">Plan for the failure</h3>
               <p class="principle-card__desc">
-                Real systems fail under real conditions. I proactively test network timeouts, malformed payloads, and
-                database constraints so systems recover gracefully.
+                Sites change their markup without warning, so the scraper uses selector fallback chains instead of one
+                brittle selector. At Paynamics, partner requests are validated against their contract before they
+                touch a transaction.
               </p>
             </div>
 
             <div class="principle-card">
               <span class="principle-card__num">04 / SHIP</span>
-              <h3 class="principle-card__title">End-to-end ownership</h3>
+              <h3 class="principle-card__title">Own it end to end</h3>
               <p class="principle-card__desc">
-                Writing code is only half the work. I ensure automated deployment, clear logging, and observability so
-                what gets shipped stays reliable in production.
+                At FPD I owned the onboarding automation from start to finish: the Lambda functions, the least-privilege
+                IAM roles they run under, and Cognito access control across the app.
               </p>
             </div>
           </div>
@@ -503,8 +521,9 @@
                 question to the final solution.
               </p>
               <p class="text-muted">
-                Outside of software, I stay curious. I spend my time exploring backend internals, tinkering with modern
-                AI pipelines, and building small tools to satisfy my own curiosity.
+                Away from the keyboard, you'll find me playing chess or tennis, or at the gym. Chess scratches the same
+                itch as debugging: read the position, think a few moves ahead, then commit. Tennis and lifting keep me
+                grounded, and they've taught me that consistency beats intensity.
               </p>
             </div>
             <div class="reveal">
@@ -555,7 +574,7 @@
               rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
           </div>
-          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© 2026</span>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
         </div>
       </div>
     </footer>

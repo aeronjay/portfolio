@@ -91,6 +91,30 @@ function initSmoothScroll() {
   });
 }
 
+// --- Dates that would otherwise go stale ---
+// [data-year] gets the current year; [data-duration-since="YYYY-MM"] gets a
+// LinkedIn-style duration ("4 MOS", "1 YR 2 MOS"), counting both end months.
+function initDates() {
+  const now = new Date();
+
+  document.querySelectorAll('[data-year]').forEach((el) => {
+    el.textContent = now.getFullYear();
+  });
+
+  document.querySelectorAll('[data-duration-since]').forEach((el) => {
+    const [year, month] = el.dataset.durationSince.split('-').map(Number);
+    const total = (now.getFullYear() - year) * 12 + (now.getMonth() + 1 - month) + 1;
+    if (!(total > 0)) return;
+
+    const yrs = Math.floor(total / 12);
+    const mos = total % 12;
+    const parts = [];
+    if (yrs) parts.push(`${yrs} ${yrs === 1 ? 'YR' : 'YRS'}`);
+    if (mos) parts.push(`${mos} ${mos === 1 ? 'MO' : 'MOS'}`);
+    el.textContent = parts.join(' ');
+  });
+}
+
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -98,4 +122,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSmoothScroll();
   initScrollReveal();
+  initDates();
 });
