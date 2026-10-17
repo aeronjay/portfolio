@@ -12,7 +12,7 @@ export default defineConfig({
         404: resolve(__dirname, '404.html'),
         ambot: resolve(__dirname, 'work/ambot/index.html'),
         fpd: resolve(__dirname, 'work/fpd/index.html'),
-        'gip-monitoring': resolve(__dirname, 'work/gip-monitoring/index.html')
+        'event-desk': resolve(__dirname, 'work/event-desk/index.html')
       }
     }
   }

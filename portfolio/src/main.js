@@ -11,6 +11,7 @@ import '../styles/project-page.css';
 
 import { initTheme } from './theme.js';
 import { initScrollReveal } from './animations.js';
+import { initGalleries } from './gallery.js';
 
 // --- Nav scroll behavior ---
 function initNavScroll() {
@@ -115,6 +116,46 @@ function initDates() {
   });
 }
 
+// --- Project card hover preview ---
+// An <img data-hover-src> inside a .project-card swaps in (e.g. a demo GIF) while the
+// card is hovered or focused. The file is only fetched on first hover, and touch
+// devices and reduced-motion users keep the static image.
+function initHoverPreview() {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canHover || reduceMotion) return;
+
+  document.querySelectorAll('[data-hover-src]').forEach((preview) => {
+    const card = preview.closest('.project-card');
+    if (!card) return;
+
+    let active = false;
+
+    preview.addEventListener('load', () => {
+      if (active) preview.classList.add('is-playing');
+    });
+
+    const start = () => {
+      active = true;
+      if (!preview.getAttribute('src')) {
+        preview.src = preview.dataset.hoverSrc;
+      } else if (preview.complete) {
+        preview.classList.add('is-playing');
+      }
+    };
+
+    const stop = () => {
+      active = false;
+      preview.classList.remove('is-playing');
+    };
+
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('focus', start);
+    card.addEventListener('blur', stop);
+  });
+}
+
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -123,4 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initScrollReveal();
   initDates();
+  initHoverPreview();
+  initGalleries();
 });

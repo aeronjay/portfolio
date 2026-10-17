@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Event Desk · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for Event Desk: an event request tracker that replaced a growing Excel sheet, with daily email reminders, Telegram notifications, server-side filtering and nightly backups.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Event Desk · Aeron Jay Bulatao">
+  <meta property="og:description" content="An event request tracker that replaced a growing Excel sheet, with daily email reminders and Telegram notifications.">
+  <meta property="og:url" content="https://aeronjay.me/work/event-desk/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">Event Desk</h1>
+        <div class="project-hero__meta">Freelance · Full Stack · React · Supabase</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="Event Desk screens">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="Walkthrough: searching, filtering, viewing and creating events">
+              <img src="/projects/event-desk/demo.gif" alt="Animated walkthrough of Event Desk: dashboard, searching and filtering the events table, opening an event, sending it to Telegram, creating an event, and the history, settings and admin pages.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Dashboard: event totals, today's and upcoming events, recent active requests" hidden>
+              <img src="/projects/event-desk/dashboard.png" loading="lazy" alt="Dashboard with totals for active, completed and discontinued events, today's events, upcoming events and recent active requests.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Events: server-side paginated table with color-coded priorities" hidden>
+              <img src="/projects/event-desk/events.png" loading="lazy" alt="Events table with type, control number, color-coded priority badges, organization, sub area, event and date columns, paginated at 25 per page.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Event detail panel with one-click send to Telegram" hidden>
+              <img src="/projects/event-desk/event-detail.png" loading="lazy" alt="Events table with a side panel showing every field of the selected event, plus Delete and Send to Telegram buttons.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Filters and sorting by type, status and three date ranges" hidden>
+              <img src="/projects/event-desk/filters.png" loading="lazy" alt="Filters and sorting popover with sort order, type, status, and event date, date received and date created ranges.">
+            </figure>
+            <figure class="gallery__slide" data-caption="New event form, built from the admin's field configuration" hidden>
+              <img src="/projects/event-desk/new-event.png" loading="lazy" alt="Add Event dialog with required fields marked, date and time pickers, and a status dropdown.">
+            </figure>
+            <figure class="gallery__slide" data-caption="History: completed and discontinued events" hidden>
+              <img src="/projects/event-desk/history.png" loading="lazy" alt="History table listing completed and discontinued events.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Settings: email reminders and the Telegram chat" hidden>
+              <img src="/projects/event-desk/settings.png" loading="lazy" alt="Account settings with an event reminder email toggle and a Telegram chat ID field.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Admin: field rules and the Excel export toggle" hidden>
+              <img src="/projects/event-desk/admin.png" loading="lazy" alt="Admin global settings with an export toggle and a table of fields showing type, required flag and dropdown options.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Admin field editor: type, required flag, default and dropdown options" hidden>
+              <img src="/projects/event-desk/admin-field-config.png" loading="lazy" alt="Edit Field side sheet for the Type field with field type, required toggle, default value and editable dropdown options.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">Walkthrough: searching, filtering, viewing and creating events</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 10</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/event-desk/event-detail.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show dashboard"><img src="/projects/event-desk/dashboard.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show events table"><img src="/projects/event-desk/events.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show event detail"><img src="/projects/event-desk/event-detail.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show filters"><img src="/projects/event-desk/filters.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show new event form"><img src="/projects/event-desk/new-event.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show history"><img src="/projects/event-desk/history.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show settings"><img src="/projects/event-desk/settings.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin"><img src="/projects/event-desk/admin.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin field editor"><img src="/projects/event-desk/admin-field-config.png" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>An events office receives a steady flow of requests from outside organizations: invitations, sponsorships, donations, medical missions and financial assistance. Every request has an event date the team has to act on before it passes.</p>
+            <p>They tracked all of it in one Excel sheet. As it grew to hundreds of rows, past events sat next to upcoming ones, and the only way to know what was coming up was to scroll and sort by hand. Events slipped by without anyone noticing until the date had already passed.</p>
+            <p>Event Desk replaces that spreadsheet. It separates active requests from finished ones, puts today's and upcoming events on the dashboard, and sends reminders to the team so nobody has to go looking. It's in daily use by the client.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The client's name and data are kept private. The screenshots on this page come from a demo build with generated data.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>Automatic daily email reminders</h3>
+            <p class="text-muted">A scheduled job runs every day and emails each user about their upcoming events 5 days before, 1 day before and on the day itself. The email groups events into Today, Tomorrow and Upcoming, skips anything already done or discontinued, and works out dates in Manila time so a reminder never lands a day early or late. Users opt in or out from their settings.</p>
+
+            <h3>Telegram notifications</h3>
+            <p class="text-muted">One click on "Send to Telegram" posts a formatted summary of the event to the team's group chat, with its attachments sent as photos with captions. The team already lived in Telegram, so the information reaches them there instead of waiting for them to open the app.</p>
+
+            <h3>Filtering and a clear past vs. upcoming split</h3>
+            <p class="text-muted">Finished requests move to a separate History view automatically. The active list can be searched and filtered by type, status, event date, date received and date created, and sorted on the server, so it stays fast no matter how many records pile up.</p>
+
+            <h3>Automated daily backups</h3>
+            <p class="text-muted">A GitHub Actions job dumps the Postgres database every night, compresses it, uploads it to Cloudflare R2 and deletes copies older than 7 days. The office's records went from one Excel file on one machine to a hosted database with a week of restorable backups.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>This was a solo freelance build. I gathered requirements with the client, designed the schema, and built, deployed and maintain the whole system:</p>
+            <ul>
+              <li>The React + TypeScript frontend: dashboard, filterable and paginated request table, history view, detail panel and create/edit forms.</li>
+              <li>The reminder pipeline: a Supabase edge function, a Postgres function that picks which users to notify, and HTML emails sent over SMTP.</li>
+              <li>The Telegram integration, including sending attachments as captioned media.</li>
+              <li>An admin panel where superadmins change each form field's label, input type, dropdown options, default value, required flag and color coding without a code change.</li>
+              <li>Direct-to-storage file uploads using presigned Cloudflare R2 URLs.</li>
+              <li>Role-based access (user vs. superadmin), an Excel export, and the nightly backup job.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">The spreadsheet didn't fail all at once. It got slower to use with every row. Past and upcoming events were mixed together, and seeing what needed attention depended on someone remembering to sort and check. A better spreadsheet wouldn't fix that, because the real problem was that someone had to remember to look.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I built the app around two ideas. First, the list should only show what's still open: a request's status decides whether it's active or history, and the dashboard pulls out today's and upcoming events on its own. Second, the system should come to the team. Daily emails and Telegram messages bring upcoming events to people instead of waiting for them to open a page.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">Moving off Excel meant giving up its total flexibility, so I made the form itself configurable. Admins can change labels, dropdown options and required fields from the app. Adding a brand-new field still needs a database column, because I kept the data in typed, queryable columns instead of a free-form JSON blob. That's what keeps filtering, sorting and the Excel export reliable.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">The team works from one shared record per request instead of one growing spreadsheet. Past events are out of the way, upcoming ones arrive in their inbox and chat, and most change requests are handled by the client's own admins without me.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>A React 19 + Vite single-page app talks to Supabase directly. Postgres row-level security policies enforce access, and Supabase Auth plus a <code>profiles</code> table supply the user's role. There's no separate API server. Anything that needs a secret runs in Deno edge functions: presigning R2 uploads, calling the Telegram Bot API, and sending reminder emails over SMTP.</p>
+            <p>Bandwidth on the hosted database was a real constraint, so the table is paginated, filtered and sorted on the server. The dashboard tiles use count-only queries, and the event lists select only the columns they display. Loading every row happens only for an explicit Excel export.</p>
+            <p>Attachments go from the browser straight to R2 through presigned PUT URLs, so file bytes never pass through Supabase. Only the file name, URL and key are stored on the request.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Deno Edge Functions</span>
+              <span class="tag">Cloudflare R2</span>
+              <span class="tag">Telegram Bot API</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>I'd keep the RLS policies and database functions in versioned migrations in the repo instead of only in the hosted database. That's the part of the system that's hardest to review and reproduce right now.</p>
+            <p>I'd also put the "active vs. history" status rule in one place, a Postgres view or generated column, instead of repeating it in the frontend queries, the dashboard and the reminder job. That would remove a whole class of drift bugs when statuses change.</p>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="reveal" style="margin-top: var(--space-8);">
+          <div class="inline inline--md">
+            <a href="https://github.com/aeronjay/EventDesk" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/" class="project-nav__link">← Back to home</a>
+          <a href="/work/ambot/" class="project-nav__link">Next Project: AmBOT →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
