@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Task Tracker · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for Task Tracker: a daily task assignment and verification system used by 390 people every day, with five roles, row-level security in Postgres, group-scoped cached views and a Next.js app on Cloudflare Workers.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Task Tracker · Aeron Jay Bulatao">
+  <meta property="og:description" content="A daily task assignment and verification system used by 390 people every day, built around role-scoped access and group-scoped caching.">
+  <meta property="og:url" content="https://aeronjay.me/work/task-tracker/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">Task Tracker</h1>
+        <div class="project-hero__meta">Freelance · Full Stack · Next.js · Supabase · Cloudflare Workers · 2026</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="Task Tracker screens">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="Walkthrough: submitting a task, assigning tasks, verifying a submission, reports">
+              <img src="/projects/task-tracker/demo.gif" alt="Animated walkthrough of Task Tracker: a member signs in, opens a daily task and submits a link with a photo, then a manager signs in, assigns a new task to three groups, finds the member's submission in the review queue and marks it complete, checks the group's monitoring calendar and opens the performance report dialog.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Verifying a submission: the reason is what the member sees" hidden>
+              <img src="/projects/task-tracker/verdict-review.png" loading="lazy" alt="Verdict dialog for one submission with the submitted link, a screenshot link, the submission time, Complete, Incomplete, Error and Failed buttons with Incomplete selected, and a reason asking the member to add a missing entry and resubmit.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Manager dashboard: pending verdicts and members across assigned groups" hidden>
+              <img src="/projects/task-tracker/dashboard.png" loading="lazy" alt="Manager dashboard with totals for pending verdicts, groups and members, quick links to review verdicts, assign tasks, manage accounts and generate a report, and a list of groups with their pending verdict counts.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Member view: open tasks with their 48-hour deadlines" hidden>
+              <img src="/projects/task-tracker/member-tasks.png" loading="lazy" alt="Member task list filtered to open tasks across all dates, each card showing the task title, its deadline, when it was created and a Submit action.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Submitting proof: a link plus a required photo, compressed in the browser" hidden>
+              <img src="/projects/task-tracker/submit-task.png" loading="lazy" alt="Task dialog with the task summary, tags and reference link, a filled-in submission link and an attached photo of a completed checklist, with a Submit button.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Review queue: every pending submission in a group, oldest work included" hidden>
+              <img src="/projects/task-tracker/verdict-queue.png" loading="lazy" alt="Review Verdicts page in By Submission mode showing a group filter, status filter, a banner with the group's pending count and Mark Group Complete action, and a table of submissions with name, task, date assigned, date submitted and status.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Assigning tasks: one batch of tasks to several groups at once" hidden>
+              <img src="/projects/task-tracker/assign-tasks.png" loading="lazy" alt="Create Tasks dialog with a reference link, title and summary filled in, shared tags, and three groups selected under Assign to Groups.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Team leader view: who is done today and which days the whole team finished" hidden>
+              <img src="/projects/task-tracker/team-monitoring.png" loading="lazy" alt="Team Monitoring page with a month calendar where a dot marks each day the whole team submitted everything, and a Pending list below showing how many of today's tasks each member has submitted.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Performance report: graded Excel export per group and date range" hidden>
+              <img src="/projects/task-tracker/report.png" loading="lazy" alt="Generate Performance Report dialog with a start and end date and checkboxes for the groups to include.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Super admin overview: accounts by role and system-wide feature switches" hidden>
+              <img src="/projects/task-tracker/admin-overview.png" loading="lazy" alt="Super admin overview with counts for total accounts, groups, managers, team leaders, members and super admins, plus quick actions for accounts, groups and reports.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">Walkthrough: submitting a task, assigning tasks, verifying a submission, reports</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 10</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/task-tracker/verdict-review.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show verdict dialog"><img src="/projects/task-tracker/verdict-review.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show manager dashboard"><img src="/projects/task-tracker/dashboard.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show member tasks"><img src="/projects/task-tracker/member-tasks.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show task submission"><img src="/projects/task-tracker/submit-task.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show review queue"><img src="/projects/task-tracker/verdict-queue.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show task assignment"><img src="/projects/task-tracker/assign-tasks.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show team monitoring"><img src="/projects/task-tracker/team-monitoring.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show report dialog"><img src="/projects/task-tracker/report.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin overview"><img src="/projects/task-tracker/admin-overview.png" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>A large distributed workforce gets a fresh set of tasks every day. Each person has to complete them and prove it, someone has to check that proof, and the people running it need to know who is keeping up and who isn't.</p>
+            <p>Before this system, there was no central place to see who had finished their tasks for the day, to verify what they submitted, or to track work that was incomplete or never done.</p>
+            <p>Task Tracker is the system that does it now. Managers assign tasks to groups each day, members submit a link and a photo as proof, managers verify every submission, team leaders track who is done, and reports grade each member on timeliness and quality. <strong>390 people use it every day.</strong></p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The client and the system are covered by an NDA, so the project is shown under a different name. The screenshots on this page come from a local build with dummy data and renamed labels.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>Daily tasks with proof</h3>
+            <p class="text-muted">Managers create a batch of tasks for a date and assign it to one group or to every group they manage in one step. Each task has a 48-hour deadline from the moment it's created. Members, who mostly work from their phones, submit a link and a required photo. The photo is compressed in the browser before upload, so a submission on mobile data stays small. A calendar marks the days on which they finished everything.</p>
+
+            <h3>Verification and resubmission</h3>
+            <p class="text-muted">Every submission gets a verdict: Complete, Incomplete, Error or Failed. Anything other than Complete sends the task back for resubmission, with a new 24-hour window (or the original deadline, if that's later). Members never see the verdict label, only the manager's written reason, so the feedback is about what to fix. The previous verdict, reason and resubmission count are kept on the record. Managers can review by submission or by person, select several rows at once, or mark a whole group's pending work complete.</p>
+
+            <h3>Monitoring scoped to each role</h3>
+            <p class="text-muted">Team leaders see which members are done or still pending for any day, and which days the entire team finished, but not what anyone submitted or how it was judged. Managers see full submissions for the groups assigned to them, and one manager can cover several groups. A super admin manages accounts and groups system-wide and can switch verification, task submission and report creation on or off for everyone.</p>
+
+            <h3>Graded performance reports</h3>
+            <p class="text-muted">A manager picks groups and a date range of up to two months and gets an Excel workbook. Each member gets a timeliness grade (full marks for submitting on the first day, less on the second, less again for late work, zero for overdue) and a verdict grade that also counts work that needed a redo. The two average into a final grade, and the sheet ranks members by their on-time, late, overdue and verdict counts.</p>
+
+            <h3>Routed support tickets</h3>
+            <p class="text-muted">Members and team leaders raise concerns from inside the app. Technical issues go to one designated support manager. Task and group issues go to the managers of the sender's group, and replies come back as in-app notifications.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>I built this alone, from the spec to production. Every commit in the repo is mine. That covers:</p>
+            <ul>
+              <li>The Postgres schema and the row-level security policies for five roles, including the helper functions that keep the policies from recursing.</li>
+              <li>The Next.js app: the mobile-first member view, the team leader and manager monitoring pages, the verdict workflow with its bulk actions, task assignment, account management and the super admin console.</li>
+              <li>Server actions that authorize the caller and then build the cross-member views (team status, completed days, member detail and the report data), cached per group.</li>
+              <li>Account creation through the Supabase admin API, rolling the auth user back if the profile insert fails, plus bulk import, promotion and demotion between roles, and moving members between groups.</li>
+              <li>Image uploads to Cloudflare R2, with a proxy route on the app's own domain for reading them back.</li>
+              <li>The deadline and grading rules, and the Excel report built from them.</li>
+              <li>Deployment to Cloudflare Workers through OpenNext, and the work to keep the app inside Cloudflare's free-tier CPU limit and the database's egress budget.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">The same submission row has four different audiences. Its author can see it. A team leader should only know that it exists. A manager sees the link, the photo and the verdict, but only for groups linked to them through a many-to-many table. A super admin sees everything. I wanted as much of that as possible enforced in Postgres. My early row-level security policies broke, though: rules that checked the caller's role by querying <code>profiles</code> ended up re-entering the policies on <code>profiles</code> itself, and Postgres refused the queries as infinite recursion.</p>
+            <p class="text-muted">The views people use most made it harder. "Who on my team is done today", "which days did the whole team finish" and a two-month graded report all read across every member, task and day in a group. Run from the browser under row-level security, each one turned into a long chain of policy-checked queries. That cost database egress on a hosted plan, while the app ran on Cloudflare Workers with a 10 ms CPU budget per request.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I split data access into two paths. Simple reads, such as a member's own tasks or a manager's queue, go straight from the browser through row-level security. The policies call small <code>SECURITY DEFINER</code> functions, <code>get_my_role()</code> and <code>get_my_group_id()</code>, that read the caller's profile without re-entering the profile policies. They're written in PL/pgSQL on purpose, so Postgres can't inline them back into the policy. That fixed the recursion. Postgres enforces own-row access, group membership, and every manager rule through the <code>manager_groups</code> junction table.</p>
+            <p class="text-muted">The cross-member views run as Next.js server actions. Each one reads the session, checks the caller's role and, for managers, that they actually manage the requested group. Only then does it query with the service-role client and return the fields that view needs. The team leader's status view carries no links or photos, and the page shows only done or pending. Results are cached per group and date, tagged by group. A submission or verdict invalidates only its own group's tags, so activity in one group never clears another group's cache. To stay under the Workers CPU limit, the middleware only checks that a session cookie exists. Real verification happens in the server actions and in Postgres.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">The service-role path skips row-level security, so the database is no longer the only gatekeeper. Every server action and API route that holds the service-role key has to run its own authorization check before touching data, and a missing check there is a real hole. That's the part of the code I have to review most carefully whenever it changes. Caching also means a view can lag behind: team status refreshes within a minute, and the calendar and report data within an hour unless a mutation invalidates them first. For tracking daily progress, that lag was acceptable.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">390 people use the system every day. Members submit from their phones, managers verify a whole group's work from one queue, and team leaders see completion without seeing anyone's content. Access rules live in the database for direct reads and in explicit checks on the server for aggregates, and the expensive views are computed once per group instead of once per viewer.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>The app is Next.js 16 (App Router, React 19, TypeScript) on Supabase Postgres and Auth. It deploys to Cloudflare Workers through the OpenNext adapter. Dashboard pages are client components that share one Supabase client and load the user's profile and the system settings once through a context, so pages don't repeat those queries. Account management and aggregate reads go through API routes and server actions that hold the service-role key.</p>
+            <p>The data model is small on purpose: groups, profiles with a role and a single group, a <code>manager_groups</code> junction, tasks per group per day, and one submission per member per task, enforced with a unique key and upserted on resubmission. Deadlines aren't stored. They're computed from the task's creation time and the last verdict, so changing the rule doesn't need a migration.</p>
+            <p>Photos go to Cloudflare R2 through its S3-compatible API and are read back through a proxy route on the app's own domain, because some phones on mobile networks couldn't load the default R2 URLs. Report data is assembled on the server, with paging past the 1,000-row default limit, and the workbook is built in the browser with ExcelJS, five groups per batch.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Row-Level Security</span>
+              <span class="tag">Cloudflare Workers</span>
+              <span class="tag">OpenNext</span>
+              <span class="tag">Cloudflare R2</span>
+              <span class="tag">ExcelJS</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>When a manager assigns one task to several groups, the app writes one task row per group, and edits and deletes find the siblings by matching title, date and creator. Two different tasks with the same title on the same day would be treated as one. I'd give each batch its own ID and key every edit on that.</p>
+            <p>I'd also move the report's grading into Postgres as a view or function. Right now the server action pages task and submission rows into Node in chunks and computes the grades there. Doing that aggregation in SQL would send back one row per member instead of every submission, which matters most on a plan where egress is the constraint.</p>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="reveal" style="margin-top: var(--space-8);">
+          <p class="text-muted" style="font-size: var(--text-sm);">The source code and the live system are private under an NDA. The screens above use dummy data with renamed labels.</p>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/" class="project-nav__link">← Back to home</a>
+          <a href="/work/event-desk/" class="project-nav__link">Next Project: Event Desk →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

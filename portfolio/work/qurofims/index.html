@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>QUROFIMS · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for QUROFIMS: a QR code-based lost-and-found system for a university, with printable QR flyers, a weighted matching engine and an admin review step before owners and finders exchange contact details.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="QUROFIMS · Aeron Jay Bulatao">
+  <meta property="og:description" content="A QR code-based lost-and-found system for a university, with printable QR flyers, automatic matching and admin-confirmed handovers.">
+  <meta property="og:url" content="https://aeronjay.me/work/qurofims/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">QUROFIMS</h1>
+        <div class="project-hero__meta">Freelance · Full Stack · Next.js · MongoDB · 2026</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="QUROFIMS screens">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="Walkthrough: filing a lost report, getting a QR flyer, admin approval and the student's notification">
+              <img src="/projects/qurofims/demo.gif" alt="Animated walkthrough of QUROFIMS: a student searches the missing items list, files a lost report for a laptop charger in five steps, gets an item page with a QR flyer and a potential match, then an admin approves the match and the student sees the confirmation in notifications.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Missing items: the public list shows lost reports only" hidden>
+              <img src="/projects/qurofims/browse.png" loading="lazy" alt="Missing Items page with a search bar, a category filter and a grid of lost item cards showing a photo, category, location and date.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Lost report form: five steps from item details to review" hidden>
+              <img src="/projects/qurofims/report-lost.png" loading="lazy" alt="Report Lost Item form on step one, with item category buttons, Electronics selected, an item name and a physical description.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Item page with a printable QR flyer that opens this page when scanned" hidden>
+              <img src="/projects/qurofims/item-qr.png" loading="lazy" alt="Item detail page for a navy blue folding umbrella with location, date and category, a QR code flyer with download and print buttons, and an I Found This Item button.">
+            </figure>
+            <figure class="gallery__slide" data-caption="&quot;I Found This Item&quot;: the finder leaves contact details for the owner" hidden>
+              <img src="/projects/qurofims/found-it.png" loading="lazy" alt="I Found This Item dialog asking for the finder's name, email, optional phone, Facebook profile and a message.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Notifications with an unread badge on the bell" hidden>
+              <img src="/projects/qurofims/notifications.png" loading="lazy" alt="Notifications page listing a Match Confirmed notification and a Potential Match Found notification, with an unread badge on the bell icon.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Matches review: lost and found reports side by side with a confidence score" hidden>
+              <img src="/projects/qurofims/admin-matches.png" loading="lazy" alt="Admin Matches Review page with pending matches, each showing a confidence label and score, the lost report next to the found report, and approve and reject buttons.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Approving a match tells the admin exactly what will happen" hidden>
+              <img src="/projects/qurofims/admin-approve.png" loading="lazy" alt="Approve Match dialog explaining that both reports will be set to matched, both parties will be emailed each other's contact details, and in-app notifications will be created.">
+            </figure>
+            <figure class="gallery__slide" data-caption="All reports: lost and found, with status actions" hidden>
+              <img src="/projects/qurofims/admin-reports.png" loading="lazy" alt="Admin All Reports page listing lost and found reports with reporter, student ID, location and date, plus view, archive, cancel, copy ID and delete actions.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Admin overview: open reports and the pending match queue" hidden>
+              <img src="/projects/qurofims/admin-dashboard.png" loading="lazy" alt="Admin overview dashboard with counts for lost reports, found reports, matched reports and pending matches, and quick action links.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">Walkthrough: filing a lost report, getting a QR flyer, admin approval and the student's notification</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 10</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/qurofims/item-qr.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show missing items list"><img src="/projects/qurofims/browse.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show lost report form"><img src="/projects/qurofims/report-lost.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show item page with QR flyer"><img src="/projects/qurofims/item-qr.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show I Found This Item dialog"><img src="/projects/qurofims/found-it.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show notifications"><img src="/projects/qurofims/notifications.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show matches review"><img src="/projects/qurofims/admin-matches.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show approve match dialog"><img src="/projects/qurofims/admin-approve.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show all reports"><img src="/projects/qurofims/admin-reports.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin overview"><img src="/projects/qurofims/admin-dashboard.png" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>On a university campus, things go missing every day: umbrellas, ID laces, tumblers, calculators, chargers. Lost and found usually runs on a logbook at an office, notices on a bulletin board and posts in student group chats. Owners and finders rarely end up looking in the same place at the same time.</p>
+            <p>QUROFIMS is a QR code-based lost-and-found system that puts both sides in one place. Students report what they lost and get a printable QR flyer for it. Finders report what they found, or scan a flyer and reach the owner directly. A matching engine pairs lost and found reports, and the lost-and-found office confirms each match before contact details are exchanged.</p>
+            <p>I built it as a freelance project for a client at a university.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The client's name and data are kept private. The screenshots on this page come from a local demo build with generated data.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>QR flyers that open the item page</h3>
+            <p class="text-muted">Every lost report gets a QR code that encodes the public URL of its item page, so anyone who scans a printed flyer with a regular phone camera lands on the report without installing anything. From there, a finder taps "I Found This Item" and leaves a name and email. The owner gets an in-app notification and an email with the finder's contact details. Signed-in students can also scan from an in-browser camera scanner.</p>
+
+            <h3>Automatic matching with confidence scores</h3>
+            <p class="text-muted">When a report comes in, the server scores it against every open report of the opposite type. Category is worth 35 points, item name 10, description keyword overlap 25 (with stop words removed), location 15, and how close the dates are 15, falling to zero after 7 days. A pair that scores 40 or more becomes a match labeled High (75+), Medium (50+) or Low, and both students are told a possible match exists.</p>
+
+            <h3>Admin-confirmed handovers</h3>
+            <p class="text-muted">Matches start out pending. The office reviews the lost and found reports side by side and can approve, reject, or undo an approval. Approving sets both reports to Matched and emails each person the other's contact details. Undoing reverts both reports and sends a correction email. Admins can also link two reports by hand when the algorithm misses a pair. Approvals, undos and claims are written to an audit log.</p>
+
+            <h3>Verified accounts and roles</h3>
+            <p class="text-muted">Sign-up sends a 6-digit code by email that expires after 10 minutes. The code is kept in its own pending collection, apart from user accounts, and the form only creates the account after the code checks out. Students and admins sign in on separate pages. A Next.js proxy (the new name for middleware) keeps signed-out users and non-admins away from protected pages, and every admin API route checks the role again on the server. Admins can edit accounts, reset passwords, deactivate users, or delete them along with everything they own.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>This was a solo freelance build. The client came with a requirements document, and I designed the data model, built the whole app and deployed it. Every commit in the repo is mine.</p>
+            <ul>
+              <li>The Prisma schema on MongoDB: users, lost and found reports, matches, notifications, audit logs and pending email codes.</li>
+              <li>About 20 Next.js API route handlers covering reports, QR codes, claims, matching, notifications, profiles and admin actions.</li>
+              <li>The matching engine and the admin review workflow: approve, reject, undo and manual matching.</li>
+              <li>The student side: five-step lost and found forms with photo upload, item pages with downloadable and printable QR flyers, the missing items list with search and filters, a dashboard, and notifications with an unread badge.</li>
+              <li>Email-code registration, NextAuth sign-in with JWT sessions, and role-based route protection.</li>
+              <li>Transactional emails through the Gmail API, and deployment to Render.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">A lost-and-found system has a trust problem built in. If found items are listed publicly, anyone can scroll through them, spot a nice calculator and say it's theirs. If nothing is shared, owners and finders never connect. And a matching algorithm that's sometimes wrong shouldn't be handing a stranger's phone number to someone on its own.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I split what each role can see. The public list shows only lost items: what people are looking for. A found report is visible only to admins, the person who found it, and an owner whose lost report has been matched to it. To get an item back, you have to describe it yourself in a lost report instead of picking it from a list. The matcher only suggests: every automatic match waits in the admin queue, and the email that gives both people each other's full contact details goes out only after someone in the office approves it.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">It adds a human step. Even a high-confidence match waits for an admin before the owner hears from the finder, so how fast an item comes back depends on how often the office checks the queue. I accepted that because a wrong automatic release leaks a student's contact details and can send an item to the wrong person, which is worse than a delay. The QR flyer is the exception on purpose: a finder who scanned it is already looking at the owner's own report, so that path connects them directly.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">Students can file and search reports from their phones, a printed flyer takes a finder straight to the right report, and the office works from a scored review queue instead of a logbook. Contact details are exchanged after a person has checked the match, and there's a record of who approved what.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>It's one Next.js 16 App Router codebase: React pages and API route handlers side by side, with Prisma on MongoDB. Sign-in uses the NextAuth credentials provider with bcrypt-hashed passwords and 24-hour JWT sessions that carry the user's role. Styling is Tailwind CSS with DaisyUI.</p>
+            <p>The app runs on Render's free tier, which shaped two decisions. Next.js builds in standalone mode and the Node heap is capped at 384 MB to stay under the 512 MB memory limit. Render also blocks outbound SMTP, so email goes through the Gmail REST API over HTTPS: the server trades an OAuth refresh token for an access token and sends the message with plain <code>fetch</code>. When the Gmail credentials are missing, the email module logs the message instead of sending it, so local development never sends real email.</p>
+            <p>Matching starts after the new report is saved and doesn't hold up the response. Before creating a match it checks whether that lost and found pair is already linked, so the same pair never shows up twice in the queue. Photos, up to three per report and checked for type and a 5 MB limit in the browser, are stored as base64 data on the report itself, which kept the first version free of a separate storage service.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">NextAuth.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">DaisyUI</span>
+              <span class="tag">QR codes</span>
+              <span class="tag">Gmail API</span>
+              <span class="tag">Render</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>The rule that contact details wait for an admin isn't enforced everywhere. The item endpoint strips the contact fields from the report, but it still returns the reporter's account record, including their email and student ID, to anyone who opens the page. The "I Found This Item" endpoint doesn't require a login and returns the owner's contact details to anyone who submits a name and an email. Skipping the admin on the flyer path is the right call, but it still needs a login and a rate limit. Registration has the same kind of gap: the server takes the browser's word that the email code was verified instead of checking it again. I'd build every response from one serializer that returns only what that viewer is allowed to see, and verify the code on the server when the account is created.</p>
+            <p>Matching runs in a promise that starts after the response is sent, and it loads every open report of the opposite type into memory. That works on a long-running server like Render's, but on a serverless host the work could be cut off, and it gets slower as reports pile up. I'd move it to a background job and narrow the candidates in the database query by category and date. I'd also move photos to object storage and keep only their URLs on the report, because right now the missing items list sends every photo inline.</p>
+          </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/work/event-desk/" class="project-nav__link">← Prev: Event Desk</a>
+          <a href="/work/ambot/" class="project-nav__link">Next Project: AmBOT →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

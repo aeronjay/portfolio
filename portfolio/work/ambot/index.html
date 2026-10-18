@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>AmBOT · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for AmBOT: a retrieval-augmented chatbot that answers student questions from EARIST's handbook, citizen's charter and other school documents, using hybrid search, a reranker and a locally hosted Mistral 7B model.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AmBOT · Aeron Jay Bulatao">
+  <meta property="og:description" content="A RAG chatbot that answers student questions from a university's own documents, with hybrid retrieval, reranking and a local Mistral 7B model.">
+  <meta property="og:url" content="https://aeronjay.me/work/ambot/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">AmBOT</h1>
+        <div class="project-hero__meta">Thesis · AI · RAG · Python · FastAPI · React · 2025–2026</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="AmBOT screens">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="Walkthrough: two student questions, answered from the Student Handbook">
+              <img src="/projects/ambot/demo.gif" alt="Animated walkthrough of AmBOT: a student asks how long a student organization's accreditation lasts, the bot shows a typing indicator and streams an answer citing the Student Handbook 2021, then answers a second question about cheating on an exam while the 3D fox mascot animates beside the chat.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Chat: answers name the document they come from" hidden>
+              <img src="/projects/ambot/chat.png" loading="lazy" alt="AmBOT chat with two answered questions. The first answer says a student organization's accreditation lasts one school year and lists what is needed to renew it, based on the Student Handbook 2021. The second says cheating on an exam is a major offense under Article VI, Section 4.1.1.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Retrieval and reranking run before the first token streams in" hidden>
+              <img src="/projects/ambot/thinking.png" loading="lazy" alt="AmBOT chat showing a question about student-athlete benefits and the &quot;AmBot is typing&quot; indicator while the mascot waits.">
+            </figure>
+            <figure class="gallery__slide" data-caption="A longer answer in dark mode: the attendance and tardiness rule" hidden>
+              <img src="/projects/ambot/chat-dark.png" loading="lazy" alt="AmBOT in dark mode answering how late a student can be before being marked absent, explaining the one-sixth of class time rule and that three tardies equal one absence.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Admin: upload PDFs and switch knowledge base files on or off" hidden>
+              <img src="/projects/ambot/admin-dashboard.png" loading="lazy" alt="AmBOT Info Manager admin dashboard with a Restart System button, an uploaded Academic Calendar PDF marked indexed, and knowledge base files grouped by folder with enable toggles.">
+            </figure>
+            <figure class="gallery__slide" data-caption="First visit: the user picks a role" hidden>
+              <img src="/projects/ambot/role-select.png" loading="lazy" alt="Role selection dialog with Current Student, Inquiring/Future Student, Teacher and School Admin options.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Settings: role, dark mode, font size and chat reset" hidden>
+              <img src="/projects/ambot/settings.png" loading="lazy" alt="Settings dialog with a user role dropdown, a dark mode toggle, a font size dropdown, and Reset Chat and Report Chat to Admin buttons.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">Walkthrough: two student questions, answered from the Student Handbook</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 7</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/ambot/chat.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show chat"><img src="/projects/ambot/chat.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show typing indicator"><img src="/projects/ambot/thinking.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show dark mode answer"><img src="/projects/ambot/chat-dark.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin dashboard"><img src="/projects/ambot/admin-dashboard.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show role selection"><img src="/projects/ambot/role-select.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show settings"><img src="/projects/ambot/settings.png" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>EARIST (Eulogio "Amang" Rodriguez Institute of Science and Technology) is a state college in Manila. What a student needs to know, like attendance rules, offenses and sanctions, enrollment steps, office services or who the dean of a college is, is spread across the Student Handbook, the Citizen's Charter, the Registrar and Library manuals, curriculum files and Facebook announcements. Finding one rule means knowing which document it's in.</p>
+            <p>AmBOT (short for Amang Bot) is a chatbot that answers those questions from the school's own documents. It retrieves the passages that match the question, has a language model write the answer from those passages only, and names the document the answer came from. If nothing relevant is found, it says it can only help with EARIST academic questions instead of guessing.</p>
+            <p>It was our thesis. Everything runs locally on open models, with no paid AI API: a fine-tuned embedding model, a reranker and Mistral 7B on one GPU.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The backend needs a GPU and isn't hosted right now, so the screens on this page come from the frontend running locally. The answers shown are ones the system generated during our evaluation runs, replayed instead of generated live, and the admin screen uses sample file data.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>Answers grounded in school documents</h3>
+            <p class="text-muted">The default knowledge base holds 225 chunks, each written around one topic and tagged with its source, category and topic: the Student Handbook 2021, the Citizen's Charter 2025, the Registrar and Library manuals, the curriculum, faculty and officials lists, the academic calendar and other campus information. The prompt limits the model to those passages and tells it to name the source, so an answer reads "According to the EARIST Student Handbook 2021…" rather than a confident guess.</p>
+
+            <h3>Follow-up questions and Taglish</h3>
+            <p class="text-muted">Students don't ask in clean, standalone English. When there's chat history, the model first rewrites the new message into a standalone English question using the last two turns. For example, "Pano kung Wednesday?" after a question about the uniform policy becomes "What is the uniform policy for Wednesday?" before retrieval runs.</p>
+
+            <h3>Streaming answers and a mascot that reacts</h3>
+            <p class="text-muted">Answers stream in token by token over server-sent events, so the student sees text within seconds instead of waiting for the full answer. Next to the chat, a 3D fox mascot rendered with React Three Fiber switches animations as the user types, while the bot answers, and when it has to decline a question.</p>
+
+            <h3>A knowledge base the school can maintain</h3>
+            <p class="text-muted">Admins sign in to an Info Manager. They can upload a PDF with its source, category and topic, which is extracted, cleaned and split into 1,200-token chunks with a 200-token overlap. They can also switch individual knowledge base files off. Restarting the system rebuilds the search indexes from whatever is enabled.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>AmBOT was a team thesis. I built the system: every commit in the repository is mine, from the first retrieval notebooks to the final version. The research and the paper were team work, and this page covers the system.</p>
+            <ul>
+              <li>The FastAPI backend and the whole RAG pipeline: query rewriting, hybrid FAISS and BM25 retrieval, reranking, the relevance threshold, prompt assembly under a token budget, and token streaming.</li>
+              <li>The retrieval experiments that led there, from the first notebooks through fine-tuned embeddings, a reranker and different chunk sizes.</li>
+              <li>The training data for the embedding model: 8,432 question and passage pairs, prepared in the same "Source; Category; Topic; Content" format the live index uses.</li>
+              <li>The React and TypeScript frontend: the chat, settings, roles, local chat history, the 3D mascot's state handling, and the admin dashboard with PDF upload and knowledge base toggles.</li>
+              <li>The test automation that sent the evaluation questions to the running system and recorded each answer and its latency next to the expected answer, with BLEU, ROUGE-L and METEOR scoring built in.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">These are questions where a wrong answer has consequences: whether something is a major offense, how many failures lead to dismissal, what an INC grade counts as. A 7B model running on one local GPU will answer anything confidently, and the school's documents are full of terms a general-purpose search model doesn't know well, like OSAS, CCS, INC or a specific office name. If retrieval brings back the wrong passage, the model writes a fluent wrong answer.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I made retrieval do most of the work, in layers. I fine-tuned the nomic-embed-text-v1.5 embedding model on 8,432 question and passage pairs from our own documents. Each question searches both FAISS (meaning) and BM25 (exact keywords), and the top 10 from each are merged. A cross-encoder reranker scores every candidate against the question and keeps the best 5. If even the best score is below a set threshold, the request stops there and AmBOT declines before any answer is generated. Only then does Mistral 7B write the answer, at temperature 0.1, from a prompt that forbids outside knowledge.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">Every question now passes through three models plus a keyword index, which costs time: in our evaluation, answers took roughly 7 to 10 seconds on a local GPU, longer for harder questions. Streaming hides part of that wait, but not all of it. The threshold also means AmBOT sometimes declines a question it could have answered when the wording is far from the documents. For a school assistant, I'd rather it say "I can't help with that" than invent a policy. Writing the knowledge base as topic-sized chunks also took manual work, so admin uploads fall back to automatic token chunking to keep adding documents practical.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">We tested the system with 84 questions at three difficulty levels and four types: direct, paraphrased, scenario-based and adversarial (questions built on a wrong premise, like "I'm on the varsity team, so my grades don't matter as much, right?"). Across 250 runs, each answer was saved with its latency and compared against a ground-truth answer. Off-topic questions are declined instead of answered, and answers name the document they come from.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>The backend is a FastAPI service. Mistral-7B-Instruct v0.2 runs as a quantized GGUF model (Q5_K_M) through llama-cpp-python, with every layer offloaded to the GPU and a 6,144-token context. The reranker also runs on the GPU. Once the index exists, the fine-tuned embedding model runs on the CPU to leave GPU memory for the LLM. Simple greetings skip the pipeline entirely.</p>
+            <p>The <code>/chat/stream</code> endpoint sends one metadata event with the retrieved and reranked chunks, then one event per generated token, then a done event. Before generating, the backend tokenizes the full prompt and drops the least relevant chunk until it fits within the 4,484 tokens left after reserving room for the answer. An earlier version also ran a fine-tuned BART model to condense the retrieved context. The final pipeline passes the reranked chunks straight to Mistral instead.</p>
+            <p>The frontend is React 19 with TypeScript, Vite and Tailwind CSS, and the mascot is a glTF model rendered with React Three Fiber. Admin accounts and uploaded PDFs live in MongoDB, behind JWT authentication.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Mistral 7B</span>
+              <span class="tag">llama.cpp</span>
+              <span class="tag">Sentence Transformers</span>
+              <span class="tag">FAISS</span>
+              <span class="tag">BM25</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Three.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>I'd show the sources in the chat. The backend already streams the exact passages each answer was built from, but the frontend only logs them to the console for admins. Showing them under the answer would let a student check the rule themselves, which matters more than anything the model says.</p>
+            <p>I'd measure retrieval on its own. Our evaluation scored the final answers, which mixes retrieval mistakes with generation mistakes. The training data already links every question to its correct passage, so a held-out set of those pairs could report whether the right passage made the top 5, and every change to the embedder, the BM25 merge or the threshold would get a number before anyone reads an answer.</p>
+            <p>I'd also move reindexing out of the request. Restarting the system deletes the indexes and reloads every model inside one admin request, and the models live in global state. A background job that rebuilds the index and swaps it in when it's ready would keep the bot answering while the knowledge base changes.</p>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="reveal" style="margin-top: var(--space-8);">
+          <div class="inline inline--md">
+            <a href="https://github.com/aeronjay/AmangBot" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/work/qurofims/" class="project-nav__link">← Prev: QUROFIMS</a>
+          <a href="/work/smartsms/" class="project-nav__link">Next Project: SmartSMS Barangay →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
