@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>SmartSMS Barangay · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for SmartSMS Barangay: a barangay management system with targeted SMS announcements through an Android phone gateway, email-verified document requests, household records and admin audit logs, built with and now used by a barangay office in Manila.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SmartSMS Barangay · Aeron Jay Bulatao">
+  <meta property="og:description" content="A barangay management system with targeted SMS announcements, email-verified document requests and household records, now in use by a barangay office in Manila.">
+  <meta property="og:url" content="https://aeronjay.me/work/smartsms/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">SmartSMS Barangay</h1>
+        <div class="project-hero__meta">Academic · Full Stack · React · Express · MongoDB</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="SmartSMS Barangay screens">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="Walkthrough: requesting a certificate, sending a targeted SMS, approving a request">
+              <img src="/projects/smartsms/demo.gif" alt="Animated walkthrough of SmartSMS Barangay: a resident fills in a certificate request, an admin logs in, filters residents aged 60 and up and loads a broadcast template, approves a document request, then views residents, households and the admin action log.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Broadcast: residents aged 60+ selected, message loaded from a template" hidden>
+              <img src="/projects/smartsms/broadcast.png" loading="lazy" alt="Broadcast page with the minimum age filter set to 60, four matching residents selected, and a medical check-up message loaded from a template.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Dashboard: SMS sent, pending requests, residents and recent activity" hidden>
+              <img src="/projects/smartsms/dashboard.png" loading="lazy" alt="Dashboard with totals for SMS sent, pending requests, registered residents and announcements, plus recent broadcasts and pending document requests.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Public site: residents request a certificate online" hidden>
+              <img src="/projects/smartsms/request-form.png" loading="lazy" alt="Request Certificate of Oneness form with full name, email, phone number, address and purpose filled in.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Approving a request: pickup date, time and instructions are emailed to the resident" hidden>
+              <img src="/projects/smartsms/approve-request.png" loading="lazy" alt="Approve Document Request dialog with the requester details, pickup date, pickup time, office hours and additional instructions.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Residents: contact details and household assignment" hidden>
+              <img src="/projects/smartsms/residents.png" loading="lazy" alt="Resident management table with name, contact number, email, address and household ID columns.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Households: generated IDs, head member and a printable RBI form" hidden>
+              <img src="/projects/smartsms/households.png" loading="lazy" alt="Household management table with household IDs, head member, member count, address, date created, creator, and edit, print and delete actions.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Broadcast history: every message with its recipients and gateway message ID" hidden>
+              <img src="/projects/smartsms/broadcast-history.png" loading="lazy" alt="Broadcast history table with recipient count, broadcast type, message, message ID and date.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Admin history: who approved, rejected or sent what, and when" hidden>
+              <img src="/projects/smartsms/admin-history.png" loading="lazy" alt="Admin action history with approvals, rejections and SMS broadcasts, each with the admin, target, details and timestamp.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Public homepage for the barangay" hidden>
+              <img src="/projects/smartsms/homepage.png" loading="lazy" alt="Public homepage for Barangay 551 Zone 54 with the barangay seal, navigation and an admin login button.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">Walkthrough: requesting a certificate, sending a targeted SMS, approving a request</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 10</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/smartsms/broadcast.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show broadcast"><img src="/projects/smartsms/broadcast.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show dashboard"><img src="/projects/smartsms/dashboard.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show request form"><img src="/projects/smartsms/request-form.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show approval"><img src="/projects/smartsms/approve-request.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show residents"><img src="/projects/smartsms/residents.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show households"><img src="/projects/smartsms/households.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show broadcast history"><img src="/projects/smartsms/broadcast-history.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show admin history"><img src="/projects/smartsms/admin-history.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show homepage"><img src="/projects/smartsms/homepage.png" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>A barangay is the smallest unit of local government in the Philippines. Its office keeps the records of every resident and household, issues certificates like proof of residency or indigency, and has to get announcements out to the community.</p>
+            <p>Most of that runs on paper, walk-ins and posted notices. Residents line up at the office just to request a certificate, and an announcement only reaches the people who happen to see it. Plenty of residents don't have mobile data, but nearly everyone can receive a text message.</p>
+            <p>SmartSMS Barangay puts the office's records and services in one web app. Admins manage residents and households and send SMS announcements to filtered groups of residents. Residents request certificates online and get the result by email.</p>
+            <p>We built it for Barangay 551, Zone 54 in Manila. We consulted the office to learn how they keep records, issue certificates and reach residents, and designed the system around that. The barangay is using it now.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The screenshots on this page come from a local demo build with generated data.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>Targeted SMS announcements</h3>
+            <p class="text-muted">Admins filter residents by age, gender, marital status, address, education, resident type or medical condition, pick recipients, and send one message to all of them. Seniors can get a vaccination notice without everyone else getting it too. Every broadcast is saved with its sender, recipients and delivery status, and reusable message templates cover the announcements that come up again and again.</p>
+
+            <h3>Email-verified document requests</h3>
+            <p class="text-muted">Residents request a certificate from the public site. The request is held in a separate pending collection and a 6-digit code, valid for 10 minutes, is emailed to them. Only a verified request reaches the admin queue, so the office never sorts through spam or mistyped emails. When an admin approves or rejects it, the resident gets an email with the pickup date and time or the reason for rejection.</p>
+
+            <h3>Households and the RBI form</h3>
+            <p class="text-muted">Residents are grouped into households with a head member and generated IDs (HH-0001, HH-0002, …). Admins can add, unassign or reassign members and change the head, and each household prints as the government's Record of Barangay Inhabitants (RBI) form, already filled in.</p>
+
+            <h3>Roles and audit trail</h3>
+            <p class="text-muted">A superadmin creates and manages admin accounts and is the only role that can delete residents or households. Approvals, rejections, broadcasts and household changes are logged with who did what and when, so the office can answer "who changed this?" without guessing.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>This started as our team's project for a Software Engineering course, but it was built for a real client: we worked with the barangay office on the requirements, and they are using the system now. I was the team's developer: every commit in the repo is mine, from the first schema to the deployed app.</p>
+            <ul>
+              <li>The Express + MongoDB backend: the data models, about 40 REST endpoints, JWT authentication and role checks.</li>
+              <li>The SMS integration with an Android phone acting as the gateway, including saving each broadcast and polling its delivery status.</li>
+              <li>The two-step document request flow and the verification, approval and rejection emails.</li>
+              <li>Household management, its audit log and the printable RBI form.</li>
+              <li>The React frontend: the public homepage and online services, and the admin dashboard with the broadcast composer, resident and household tables, request queue and history pages.</li>
+              <li>Deployment to Render, with Express serving both the API and the built frontend.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">SMS was the whole point: it's the one channel that reaches residents without data or a smartphone. But SMS APIs charge per message and need a business account, and a barangay office doesn't have a budget line for a messaging platform. If sending announcements cost money every time, the feature wouldn't get used.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I used android-sms-gateway, which turns an ordinary Android phone with a regular SIM into an SMS API. The backend sends the recipients and message to the phone, saves the broadcast with the message ID it gets back, and later asks the gateway for the message's state to record whether it was sent, delivered or failed. The office's own phone and load do the sending.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">A single phone is a much weaker sender than a commercial provider. Throughput is limited to what one SIM and the carrier allow, and if the phone is off or loses signal, nothing goes out. I accepted that because broadcasts are occasional and go to hundreds of people, not thousands per minute, and because saving every broadcast with its status means a failed send shows up in the history instead of disappearing.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">The barangay is using the system now. The office can reach a targeted group of residents by text without paying for a messaging platform, every message sent is on record, and residents can request certificates without lining up at the office first.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>A React + Vite frontend built with Material UI talks to an Express API over REST. In production, Express serves the built frontend too, so the whole app deploys as one Node service on Render with MongoDB Atlas behind it.</p>
+            <p>Admins sign in with a bcrypt-hashed password and get a JWT that expires after 8 hours. Middleware checks the token on every admin route, and a second middleware restricts deletes and account management to the superadmin role.</p>
+            <p>Document requests use two collections on purpose. Unverified requests and their codes live in a pending collection and are replaced if the same email requests again. Only after the code checks out is the request copied into the real collection, so nothing in the admin queue is unverified. Emails go through Nodemailer, and a failed approval email is logged without rolling back the admin's decision.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Mongoose</span>
+              <span class="tag">JWT</span>
+              <span class="tag">Nodemailer</span>
+              <span class="tag">android-sms-gateway</span>
+              <span class="tag">Material UI</span>
+              <span class="tag">Render</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>Creating a household writes to several documents in a row: the head, the household, then each member. If one write fails halfway, the data is left half-updated. I'd wrap it in a MongoDB transaction, and I'd generate household IDs from a counter instead of counting documents, since the count-based ID can repeat after a household is deleted.</p>
+            <p>I'd also store every date in plain UTC. Right now some models shift timestamps to Philippine time before saving, which means every place that reads a date has to know whether it was shifted. Storing UTC and converting only on display removes that whole class of bugs.</p>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section class="reveal" style="margin-top: var(--space-8);">
+          <div class="inline inline--md">
+            <a href="https://github.com/aeronjay/SmartSMS-Barangay" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            <a href="https://smartsms-barangay.onrender.com" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Live Demo →</a>
+          </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/work/event-desk/" class="project-nav__link">← Prev: Event Desk</a>
+          <a href="/work/fpd/" class="project-nav__link">Next Project: FPD →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         404: resolve(__dirname, '404.html'),
-        ambot: resolve(__dirname, 'work/ambot/index.html'),
+        smartsms: resolve(__dirname, 'work/smartsms/index.html'),
         fpd: resolve(__dirname, 'work/fpd/index.html'),
         'event-desk': resolve(__dirname, 'work/event-desk/index.html')
       }
