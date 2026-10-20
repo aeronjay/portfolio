@@ -13,7 +13,8 @@ export default defineConfig({
         smartsms: resolve(__dirname, 'work/smartsms/index.html'),
         'event-desk': resolve(__dirname, 'work/event-desk/index.html'),
         ambot: resolve(__dirname, 'work/ambot/index.html'),
-        'task-tracker': resolve(__dirname, 'work/task-tracker/index.html')
+        'task-tracker': resolve(__dirname, 'work/task-tracker/index.html'),
+        'shopify-support-desk': resolve(__dirname, 'work/shopify-support-desk/index.html')
       }
     }
   }

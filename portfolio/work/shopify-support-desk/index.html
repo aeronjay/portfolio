@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>AI Support Desk for Shopify · Aeron Jay Bulatao</title>
+  <meta name="description" content="Case study for an n8n workflow that reads a Shopify store's support emails, classifies them with Gemini, looks up the real order, applies refund rules in code and saves a reply as a Gmail draft for a human to approve.">
+  <meta name="author" content="Aeron Jay Bulatao">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Support Desk for Shopify · Aeron Jay Bulatao">
+  <meta property="og:description" content="An n8n workflow that triages support emails with Gemini, looks up real Shopify orders and drafts replies for a human to approve.">
+  <meta property="og:url" content="https://aeronjay.me/work/shopify-support-desk/">
+  <meta property="og:image" content="https://aeronjay.me/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/ajbLogo1.svg?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <nav id="site-nav" class="nav nav--scrolled" aria-label="Main navigation" style="border-bottom-color: var(--color-border); background-color: var(--color-nav-bg);">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">← Back to home</a>
+
+        <div class="nav__links">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page__main" style="padding-top: var(--space-20);">
+
+      <!-- HERO -->
+      <header class="container project-hero reveal">
+        <h1 class="project-hero__title">AI Support Desk for Shopify</h1>
+        <div class="project-hero__meta">Personal Project · Automation · n8n · Gemini · 2026</div>
+
+        <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="AI Support Desk workflow in n8n">
+          <div class="gallery__viewport">
+            <figure class="gallery__slide" data-caption="The whole workflow in n8n: six labelled stages and the 8:00 report">
+              <img src="/projects/shopify-support-desk/canvas-overview.svg" alt="The full n8n canvas: six labelled sections from intake to delivery, with the daily report workflow underneath.">
+            </figure>
+            <figure class="gallery__slide" data-caption="1 · Intake: poll Gmail, get a Shopify token, loop through emails, skip automated mail" hidden>
+              <img src="/projects/shopify-support-desk/canvas-intake.svg" loading="lazy" alt="Intake section: Gmail trigger, Config, Shopify access token, a loop over emails, email cleaning and an automated-or-newsletter check.">
+            </figure>
+            <figure class="gallery__slide" data-caption="2–3 · Understand and look up: ticket history, Gemini classification, real Shopify order" hidden>
+              <img src="/projects/shopify-support-desk/canvas-understand.svg" loading="lazy" alt="Understand and look-up sections: customer ticket history from Sheets, the Gemini classification call and its validator, then the Shopify order lookup by number or by email.">
+            </figure>
+            <figure class="gallery__slide" data-caption="4 · Decide: each intent gets its own business rules" hidden>
+              <img src="/projects/shopify-support-desk/canvas-decide.svg" loading="lazy" alt="Decide section: a switch routes by intent into branches for order status, refund window, product search, complaints and general replies.">
+            </figure>
+            <figure class="gallery__slide" data-caption="5 · Draft, check, log and alert" hidden>
+              <img src="/projects/shopify-support-desk/canvas-draft.svg" loading="lazy" alt="Draft section: build the reply prompt, Gemini drafts the reply, a quality check, Gmail draft and label, Sheets log, and a Discord alert when a human is needed.">
+            </figure>
+            <figure class="gallery__slide" data-caption="6 · Morning report: stats, Gemini insights, email and Discord" hidden>
+              <img src="/projects/shopify-support-desk/canvas-report.svg" loading="lazy" alt="Daily report section: schedule trigger, read the ticket log, aggregate the last 24 hours, Gemini insights, HTML report by Gmail and a Discord summary.">
+            </figure>
+          </div>
+
+          <div class="gallery__bar">
+            <p class="gallery__caption" aria-live="polite">The whole workflow in n8n: six labelled stages and the 8:00 report</p>
+            <div class="gallery__controls">
+              <span class="gallery__count">1 / 6</span>
+              <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button type="button" class="gallery__arrow" data-gallery-next aria-label="Next screen">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery__thumbs">
+            <button type="button" class="gallery__thumb" aria-label="Show whole workflow" aria-current="true"><img src="/projects/shopify-support-desk/canvas-overview.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show intake"><img src="/projects/shopify-support-desk/canvas-intake.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show understand and look up"><img src="/projects/shopify-support-desk/canvas-understand.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show decide"><img src="/projects/shopify-support-desk/canvas-decide.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show draft and deliver"><img src="/projects/shopify-support-desk/canvas-draft.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show morning report"><img src="/projects/shopify-support-desk/canvas-report.svg" loading="lazy" alt=""></button>
+          </div>
+        </section>
+      </header>
+
+      <!-- CASE STUDY CONTENT -->
+      <article class="container project-content">
+
+        <!-- THE PROJECT -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Project</h2>
+          <div class="project-section__body text-muted">
+            <p>Small online stores get the same few emails over and over: where is my order, can I return this, does this come in another size. The answers are already in Shopify. Someone just has to open the order, check the policy and type the reply.</p>
+            <p>This n8n workflow does that groundwork. It reads each new support email, works out what the customer wants and how upset they are, looks up their real order and products in Shopify, applies the store's rules, and saves a reply as a Gmail draft in the customer's thread. A person reads it and presses send. Tickets that need judgment ping the support lead on Discord, and the owner gets a short report every morning.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The store, Bloom &amp; Brew Co., is fictional. The workflow runs against a Shopify development store with test orders. The canvas views above are drawn from the exported workflow file, with the same nodes, positions and connections as in the n8n editor.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- KEY FEATURES -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Key Features</h2>
+          <div class="project-section__body">
+            <h3>Replies grounded in real order data</h3>
+            <p class="text-muted">If the email mentions an order number, the workflow fetches that order through the Shopify Admin GraphQL API. If not, it finds the customer's most recent orders by their email address. Gemini only sees what Shopify returns (status, items, totals, tracking numbers), and the prompt forbids inventing refunds, discounts or dates.</p>
+
+            <h3>Business rules decided in code, not by the model</h3>
+            <p class="text-muted">A switch routes each email by intent, and every branch has its own rules. Order status splits on whether it has shipped. Refunds check the days since the order against the store's return window. Product questions pull live product data. Complaints always go to a human. The AI writes the wording; the workflow decides the outcome.</p>
+
+            <h3>A quality gate before anything reaches the inbox</h3>
+            <p class="text-muted">A code step checks every draft for empty output, leftover placeholders and excessive length, then decides whether a person must review it: a policy escalation, a very unhappy customer, high urgency, a high-value order, a repeat contact that week, or AI confidence below 0.6 all flag the ticket. Flagged drafts get a "Needs Human" label and a Discord alert with the reasons.</p>
+
+            <h3>Morning report and failure alerts</h3>
+            <p class="text-muted">At 8:00 the workflow reads the last 24 hours of tickets from Google Sheets, counts them by intent and category, finds the unhappiest customers, asks Gemini for trends, and emails an HTML report to the owner. A separate error workflow posts any failure to Discord with the node that failed and logs it to an Errors sheet.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- MY CONTRIBUTION -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">My Contribution</h2>
+          <div class="project-section__body text-muted">
+            <p>Solo project. I designed the flow and built both workflows, 54 nodes in total:</p>
+            <ul>
+              <li>Email intake that strips quoted history and signatures, extracts order numbers, and skips auto-replies, bounces and newsletters so the desk never replies to a robot.</li>
+              <li>Two Gemini calls with structured JSON output: one to classify intent, sentiment and urgency, one to draft the reply. Both are validated in code with safe fallbacks.</li>
+              <li>Shopify GraphQL queries for orders and products, authenticated with a short-lived token from the client-credentials grant.</li>
+              <li>The intent router and its rule branches, the quality gate, threaded Gmail drafts with labels, and the Sheets ticket log.</li>
+              <li>The daily report, Discord alerts and the error-handling workflow.</li>
+              <li>Setup documentation, test emails and sheet templates so someone else can run it from the exported files.</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- THE CHALLENGE -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">The Challenge</h2>
+          <div class="project-section__body">
+            <h3>The Problem</h3>
+            <p class="text-muted">An AI reply that sounds confident but is wrong costs a store more than a slow reply. A model left to itself will happily promise a refund the policy doesn't allow, or guess at a delivery date. And a model's output format isn't guaranteed, so one chatty answer can break everything downstream.</p>
+
+            <h3>The Decision</h3>
+            <p class="text-muted">I kept the model's job narrow. It classifies and it writes; it doesn't decide. Facts come from Shopify, eligibility comes from IF and code nodes, every AI response is parsed and validated before use, and nothing is sent automatically. Every reply lands as a draft, and anything risky is labelled and escalated.</p>
+
+            <h3>The Tradeoff</h3>
+            <p class="text-muted">Drafts-only means a person still presses send on every email, so the store saves the lookup and writing time but not the review. I chose that on purpose: it's the safe default until the drafts have a track record. Separately, the first version sent alerts through Telegram, but the Telegram API was unreachable from my network, so I moved alerts to Discord webhooks. That also removed a bot token from the setup.</p>
+
+            <h3>The Result</h3>
+            <p class="text-muted">The workflow is built end to end and documented, with the Gmail and Google Sheets connections tested against my own account. Next is a full run on a Shopify development store with a set of test emails covering each intent. Screenshots of that run will join the workflow views above.</p>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- TECHNICAL DETAILS -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">Technical Details</h2>
+          <div class="project-section__body text-muted">
+            <p>n8n runs self-hosted in Docker. Gmail is polled every minute for unread mail, and a loop processes one email at a time so a single bad message can't take down the batch. Everything store-specific (shop domain, return window, high-value threshold, policy text, signature, label IDs) lives in one config node.</p>
+            <p>Shopify calls go to the Admin GraphQL API. Each run starts by exchanging the app's client ID and secret for a fresh access token, so the access token itself only lives for the length of the run. Gemini is called over plain HTTP with an API key header and asked for JSON; the validator strips code fences, rejects unknown intents, clamps sentiment to −1…1 and falls back to "other" and "medium" if parsing fails.</p>
+            <p>Every ticket is appended to Google Sheets with its intent, sentiment, urgency, order, AI confidence and review reasons. The same sheet supplies each customer's history for repeat-contact detection and feeds the morning report.</p>
+
+            <div class="inline inline--sm" style="margin-top: var(--space-6);">
+              <span class="tag">n8n</span>
+              <span class="tag">Google Gemini API</span>
+              <span class="tag">Shopify GraphQL</span>
+              <span class="tag">Gmail API</span>
+              <span class="tag">Google Sheets</span>
+              <span class="tag">Discord Webhooks</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="divider reveal" style="margin: 0;">
+
+        <!-- WHAT I'D CHANGE TODAY -->
+        <section class="project-section reveal">
+          <h2 class="project-section__title">What I'd change today</h2>
+          <div class="project-section__body text-muted">
+            <p>I'd move the Shopify client secret out of the config node into an n8n credential. Keeping all settings in one node makes setup easy, but it means the secret travels with every workflow export.</p>
+            <p>I'd also replace Gmail polling with a push trigger through Gmail's watch API and Pub/Sub. Polling every minute is simple and reliable, but it adds up to a minute of delay and burns API calls when the inbox is quiet.</p>
+          </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="project-nav reveal">
+          <a href="/work/smartsms/" class="project-nav__link">← Prev: SmartSMS Barangay</a>
+          <a href="/" class="project-nav__link">Back to home →</a>
+        </nav>
+
+      </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__info">
+          <span class="footer__name">Aeron Jay Bulatao</span>
+          <span class="footer__meta">Software Engineer · Philippines</span>
+        </div>
+        <div>
+          <div class="footer__links">
+            <a href="https://github.com/aeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:bulataoaeronjay@gmail.com" class="footer__link">Email</a>
+          </div>
+          <span class="footer__meta" style="margin-top: var(--space-2); display: block;">© <span data-year>2026</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
