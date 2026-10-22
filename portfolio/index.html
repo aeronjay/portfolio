@@ -98,31 +98,51 @@
 
       <!-- HERO -->
       <section class="section section--hero" aria-label="Introduction">
-        <div class="hero__dot-grid" aria-hidden="true"></div>
+        <div id="hero-grid" class="hero__dot-grid" aria-hidden="true">
+          <div class="hero__dot-grid-glow"></div>
+        </div>
         <div class="section__inner hero__content">
-          <div class="status hero-reveal hero-reveal--1">
-            <span class="status__dot"></span>
-            Finding Remote Work
+          <div class="hero__text">
+            <a href="#contact" class="status status--hero hero-reveal hero-reveal--1">
+              <span class="status__dot status__dot--ping" aria-hidden="true"></span>
+              <span class="status__label">Finding Remote Work</span>
+              <span class="status__sep" aria-hidden="true">·</span>
+              <span class="status__cta">Let's talk <span aria-hidden="true">→</span></span>
+            </a>
+
+            <h1 id="hero-name" class="hero__name hero-reveal hero-reveal--2" aria-label="Aeron Jay Bulatao">
+              <span class="hero__name-line" aria-hidden="true">Aeron Jay</span>
+              <span class="hero__name-line" aria-hidden="true">Bulatao</span>
+            </h1>
+
+            <p class="hero__tagline hero-reveal hero-reveal--3">
+              <span class="visually-hidden">Building payment systems, backend tools, and automated workflows that run in production.</span>
+              <span aria-hidden="true">
+                Building <span id="hero-rotator" class="hero__rotator"><span class="hero__rotator-word is-active">payment systems</span><span class="hero__rotator-word">backend tools</span><span class="hero__rotator-word">automated workflows</span></span><br>
+                that run in production.
+              </span>
+            </p>
+
+            <p class="hero__context hero-reveal hero-reveal--3b">
+              Software Engineer · Based in the Philippines
+            </p>
+
+            <div class="inline inline--md hero-reveal hero-reveal--4">
+              <a href="#work" class="btn btn--primary">View my work ↓</a>
+              <a href="https://github.com/aeronjay/" class="btn btn--secondary" target="_blank"
+                rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="btn btn--secondary" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            </div>
           </div>
 
-          <h1 class="hero__name hero-reveal hero-reveal--2">
-            Aeron Jay<br>Bulatao
-          </h1>
-
-          <p class="hero__tagline hero-reveal hero-reveal--3">
-            Building payment systems, backend tools, and automated workflows that run in production.
-          </p>
-
-          <p class="hero__context hero-reveal hero-reveal--3b">
-            Software Engineer · Based in the Philippines
-          </p>
-
-          <div class="inline inline--md hero-reveal hero-reveal--4">
-            <a href="#work" class="btn btn--primary">View my work ↓</a>
-            <a href="https://github.com/aeronjay/" class="btn btn--secondary" target="_blank"
-              rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/bulataoaeronjay/" class="btn btn--secondary" target="_blank"
-              rel="noopener noreferrer">LinkedIn</a>
+          <!-- Decorative log of real projects; content lives in the Selected Work section -->
+          <div id="hero-terminal" class="hero-terminal hero-reveal hero-reveal--4" aria-hidden="true">
+            <div class="hero-terminal__bar">
+              <span class="hero-terminal__lights"><i></i><i></i><i></i></span>
+              <span class="hero-terminal__title">~/aeron — ship.log</span>
+            </div>
+            <ol class="hero-terminal__body"></ol>
           </div>
         </div>
 

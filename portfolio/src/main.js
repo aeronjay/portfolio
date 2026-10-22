@@ -12,6 +12,7 @@ import '../styles/project-page.css';
 import { initTheme } from './theme.js';
 import { initScrollReveal } from './animations.js';
 import { initGalleries } from './gallery.js';
+import { initHero } from './hero.js';
 
 // --- Nav scroll behavior ---
 function initNavScroll() {
@@ -166,4 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDates();
   initHoverPreview();
   initGalleries();
+  initHero();
 });

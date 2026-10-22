@@ -788,10 +788,94 @@
   50% { opacity: 0.4; }
 }
 
+/* Hero status: a pill that links to #contact. Hero-only, so the plain
+   .status/.status__dot used in "Currently" stay as they are. */
+.status--hero {
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background-color: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 999px;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.status--hero:hover {
+  color: var(--color-text);
+  background-color: rgba(34, 197, 94, 0.14);
+  border-color: rgba(34, 197, 94, 0.6);
+  transform: translateY(-1px);
+}
+
+.status__label {
+  font-weight: 500;
+}
+
+.status__sep {
+  color: var(--color-text-muted);
+}
+
+.status__cta {
+  color: var(--color-text);
+}
+
+.status__cta span {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.status--hero:hover .status__cta span {
+  transform: translateX(3px);
+}
+
+/* Green dot with a sonar ring */
+.status__dot--ping {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  animation: none;
+}
+
+.status__dot--ping::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #22c55e;
+  animation: status-ping 1.8s var(--ease-out) infinite;
+}
+
+@keyframes status-ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(3.2); opacity: 0; }
+}
+
+@media (max-width: 479px) {
+  .status__sep,
+  .status__cta {
+    display: none;
+  }
+}
+
 /* --- Hero --- */
 .hero__content {
   position: relative;
   z-index: 2;
+  width: 100%; /* .section__inner's auto margins would otherwise shrink it to fit */
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero__content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+    gap: var(--space-10);
+  }
 }
 
 .hero__name {
@@ -805,12 +889,218 @@
   margin-bottom: var(--space-6);
 }
 
+.hero__name-line {
+  display: block;
+}
+
+/* Name decode: hero.js wraps each letter and locks its width, so the
+   scrambled glyphs never reflow the page. */
+.hero__char {
+  display: inline-block;
+  text-align: center;
+}
+
+.hero__char.is-scrambling {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.78em;
+  color: var(--color-accent);
+}
+
+.hero__char.is-settled {
+  animation: char-settle 450ms var(--ease-out);
+}
+
+@keyframes char-settle {
+  from { opacity: 0.4; transform: translateY(0.08em); filter: blur(3px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
 .hero__tagline {
   font-size: var(--text-xl);
   color: var(--color-text-muted);
   max-width: 560px;
   line-height: 1.55;
   margin-bottom: var(--space-3);
+}
+
+/* Rotating phrase: every phrase sits in the same grid cell, so the slot is
+   always as wide as the longest one and nothing around it moves. */
+.hero__rotator {
+  display: inline-grid;
+  vertical-align: bottom;
+  overflow: hidden;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.hero__rotator-word {
+  grid-area: 1 / 1;
+  justify-self: start;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out),
+    filter var(--duration-slow) var(--ease-out);
+  filter: blur(4px);
+}
+
+/* Accent underline that draws in under the active phrase */
+.hero__rotator-word {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 0 2px;
+}
+
+.hero__rotator-word.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
+  background-size: 100% 2px;
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out),
+    filter var(--duration-slow) var(--ease-out),
+    background-size 700ms var(--ease-out) 250ms;
+}
+
+.hero__rotator-word.is-leaving {
+  opacity: 0;
+  transform: translateY(-100%);
+  filter: blur(4px);
+}
+
+/* --- Hero terminal card --- */
+.hero-terminal {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  width: 100%;
+  max-width: 30rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 1px 2px var(--color-card-shadow),
+    0 24px 48px -24px rgba(28, 25, 23, 0.18);
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 600ms var(--ease-out);
+}
+
+[data-theme="dark"] .hero-terminal {
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero-terminal {
+    box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.hero-terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.hero-terminal__lights {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.hero-terminal__lights i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.hero-terminal__title {
+  flex: 1;
+  text-align: center;
+  margin-right: 39px; /* balances the lights so the title is centered */
+  font-size: 0.6875rem;
+}
+
+.hero-terminal__body {
+  list-style: none;
+  height: 15.5rem;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0, black 3.5rem);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 3.5rem);
+}
+
+.hero-terminal__line {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: var(--space-2);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  animation: terminal-line 400ms var(--ease-out);
+}
+
+@keyframes terminal-line {
+  from { opacity: 0; transform: translateY(6px); }
+}
+
+.hero-terminal__time {
+  opacity: 0.6;
+}
+
+.hero-terminal__mark {
+  color: var(--color-accent);
+}
+
+.hero-terminal__line--ok .hero-terminal__mark {
+  color: #16a34a;
+}
+
+.hero-terminal__project {
+  color: var(--color-text);
+}
+
+.hero-terminal__line--cmd {
+  color: var(--color-text);
+}
+
+.hero-terminal__line--cmd .hero-terminal__mark {
+  color: var(--color-text-muted);
+}
+
+.hero-terminal__caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  background-color: var(--color-accent);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 959px) {
+  .hero-terminal {
+    max-width: 34rem;
+  }
+
+  .hero-terminal__body {
+    height: 11rem;
+  }
 }
 
 .hero__context {
@@ -821,27 +1111,77 @@
   margin-bottom: var(--space-8);
 }
 
-/* Dot grid background */
+/* Dot grid background. The base dots sit on ::before; the child layer is the
+   same grid in the accent color, revealed in a circle around the cursor
+   (--mx/--my, set by hero.js). Both layers share one origin so dots line up. */
 .hero__dot-grid {
+  --mx: 78%;
+  --my: 32%;
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.35;
-  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 70% 60% at 80% 30%, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 30%, black 0%, transparent 70%);
   pointer-events: none;
 }
 
-[data-theme="dark"] .hero__dot-grid {
-  opacity: 0.2;
+.hero__dot-grid::before,
+.hero__dot-grid-glow {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: 32px 32px;
+  background-position: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .hero__dot-grid {
-    opacity: 0.2;
+.hero__dot-grid::before {
+  opacity: 0.9;
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1.2px);
+  mask-image: radial-gradient(ellipse 85% 75% at 70% 40%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 70% 40%, black 0%, transparent 75%);
+}
+
+.hero__dot-grid-glow {
+  opacity: 0.85;
+  background-image: radial-gradient(circle, var(--color-accent) 1.6px, transparent 2px);
+  mask-image: radial-gradient(circle 240px at var(--mx) var(--my), black 0%, rgba(0, 0, 0, 0.35) 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 240px at var(--mx) var(--my), black 0%, rgba(0, 0, 0, 0.35) 45%, transparent 100%);
+}
+
+/* Mouse devices: the glow only shows while the cursor is over the hero
+   (hero.js toggles .is-active) */
+@media (hover: hover) and (pointer: fine) {
+  .hero__dot-grid-glow {
+    opacity: 0;
+    transition: opacity var(--duration-slow) var(--ease-out);
   }
+
+  .hero__dot-grid.is-active .hero__dot-grid-glow {
+    opacity: 0.85;
+  }
+}
+
+/* Touch screens: no cursor, so the glow drifts on its own */
+@media (hover: none) {
+  .hero__dot-grid {
+    animation: grid-drift 14s ease-in-out infinite alternate;
+  }
+}
+
+@property --mx {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 78%;
+}
+
+@property --my {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 32%;
+}
+
+@keyframes grid-drift {
+  0% { --mx: 80%; --my: 20%; }
+  50% { --mx: 30%; --my: 45%; }
+  100% { --mx: 70%; --my: 75%; }
 }
 
 /* Scroll indicator */
@@ -871,6 +1211,13 @@
   background-color: var(--color-text-muted);
   opacity: 0.5;
   animation: scroll-line 2s var(--ease-out) infinite;
+}
+
+/* The stacked mobile layout runs past the fold, so the cue would sit on the terminal */
+@media (max-width: 959px) {
+  .hero__scroll-cue {
+    display: none;
+  }
 }
 
 @keyframes scroll-line {

@@ -67,6 +67,14 @@
     animation: none;
   }
 
+  .hero-terminal {
+    transform: none;
+  }
+
+  .status--hero:hover {
+    transform: none;
+  }
+
   .project-card:hover {
     transform: none;
   }
