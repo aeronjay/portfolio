@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in LaTeX — Harvard style
+% Aeron Jay P. Bulatao — Software Engineer
+% Section order: Experience, Projects, Skills & Interests, Education
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins (0.5in sides, ~0.5in top/bottom)
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting: small caps heading with a full-width rule
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Organization (bold, left) | Location (right)
+% Title (italic, left)      | Dates (italic, right)
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Aeron Jay P. Bulatao} \\ \vspace{3pt}
+    \small Manila, Philippines $|$ +63 945 367 4856 $|$
+    \href{mailto:bulataoaeronjay@gmail.com}{bulataoaeronjay@gmail.com} \\ \vspace{1pt}
+    \href{https://aeronjay.me}{aeronjay.me} $|$
+    \href{https://github.com/aeronjay}{github.com/aeronjay} $|$
+    \href{https://www.linkedin.com/in/bulataoaeronjay}{linkedin.com/in/bulataoaeronjay}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Paynamics Technologies Inc.}{Makati, Philippines (Hybrid)}
+      {Software Engineer}{Jul 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Build and maintain payment gateway APIs and backend services in \textbf{Kotlin (Javalin)} and \textbf{Java (Spring Boot)} that process merchant transactions.}
+        \resumeItem{Integrate new partner payment channels and merchant checkout endpoints, validating every request against its contract and persisting transaction records across \textbf{PostgreSQL} and \textbf{MongoDB}.}
+        \resumeItem{Strengthen error handling in payment flows so failed or partial transactions are caught, logged and recoverable instead of silently dropped.}
+        \resumeItem{Contribute to internal merchant tools and operational workflows with React/TypeScript and AWS.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Freelance Full-Stack Developer}{Remote}
+      {Solo builds for private clients, from requirements to production}{2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Task Tracker (NDA client):} Built a daily task assignment and verification system used by \textbf{390 people every day}, with five roles, proof-of-work submissions, a verdict and resubmission workflow, and graded Excel performance reports (\textbf{Next.js, TypeScript, Supabase, Cloudflare Workers}).}
+        \resumeItem{Enforced access for five roles with \textbf{Postgres row-level security}; resolved infinite policy recursion with \texttt{SECURITY DEFINER} PL/pgSQL helper functions, and moved cross-member views into authorized server actions cached per group.}
+        \resumeItem{Kept the app inside Cloudflare Workers' 10\,ms CPU budget and the database egress limit through tag-based cache invalidation, in-browser photo compression and server-side paging; photos stored on \textbf{Cloudflare R2}.}
+        \resumeItem{\textbf{Event Desk:} Replaced an events office's growing Excel sheet with a \textbf{React/TypeScript + Supabase} tracker now in daily use, separating past and upcoming requests with server-side filtering and pagination.}
+        \resumeItem{Automated follow-up with \textbf{Deno edge functions}: daily email reminders 5 days, 1 day and same-day before each event (computed in Manila time), one-click Telegram posts with attachments, and nightly \textbf{GitHub Actions} database backups to R2 with 7-day retention.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {FPD Asia Property Services, Inc.}{Makati, Philippines (On-site)}
+      {Full-Stack Developer \& Tech Lead (Internship)}{Mar 2026 -- May 2026}
+      \resumeItemListStart
+        \resumeItem{Led end-to-end development of an internal property management web application as Technical Lead and Full-Stack Developer using \textbf{React/TypeScript} and \textbf{Java/Spring Boot}.}
+        \resumeItem{Designed and deployed event-driven serverless functions on \textbf{AWS Lambda} to automate onboarding emails, eliminating manual handling and reducing turnaround time.}
+        \resumeItem{Configured \textbf{AWS IAM} roles and least-privilege policies governing interactions between Lambda, Cognito and the Spring Boot backend.}
+        \resumeItem{Integrated \textbf{AWS Cognito} for authentication and role-based access control across the application.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Private E-Commerce Client (Canada)}{Remote}
+      {Automation \& Web Scraping Engineer (Freelance)}{Jan 2025 -- Mar 2025}
+      \resumeItemListStart
+        \resumeItem{Delivered a paid, production multi-site scraping system in \textbf{Python/Playwright} covering \textbf{7+ competitor sites} including Amazon.ca, automating price research that took \textbf{5--8 hours} of manual work every week.}
+        \resumeItem{Built the pipeline end to end: scheduled trigger $\rightarrow$ headless Chromium with anti-bot measures $\rightarrow$ dynamic DOM traversal across up to 20 paginated pages per site $\rightarrow$ structured CSV output.}
+        \resumeItem{Designed one scraper module per site behind a master dispatcher, so new competitors are onboarded without touching working code; added selector fallback chains to survive markup changes.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+        {\textbf{AmBOT} $|$ \emph{Python, FastAPI, FAISS, Mistral 7B, React, TypeScript} $|$
+        \href{https://github.com/aeronjay/AmangBot}{github.com/aeronjay/AmangBot}}{2025 -- 2026}
+        \resumeItemListStart
+          \resumeItem{Built a RAG chatbot (team thesis; sole developer of the system) that answers student questions from 225 topic-sized chunks of the university's handbook, charter and manuals, citing its source and declining when the documents don't cover a question.}
+          \resumeItem{Designed layered retrieval: \textbf{nomic-embed fine-tuned on 8,432} question--passage pairs, hybrid FAISS + BM25 search, a cross-encoder reranker and a relevance threshold, feeding a locally hosted \textbf{Mistral 7B} (llama.cpp, GPU).}
+          \resumeItem{Added Taglish follow-up rewriting, token streaming over server-sent events, an admin PDF ingestion dashboard, and automated evaluation of \textbf{84 questions across 250 runs} with BLEU, ROUGE-L and METEOR scoring.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{SmartSMS Barangay} $|$ \emph{React, Node.js, Express, MongoDB, JWT} $|$
+        \href{https://github.com/aeronjay/SmartSMS-Barangay}{github.com/aeronjay/SmartSMS-Barangay}}{2025}
+        \resumeItemListStart
+          \resumeItem{Built a records and services system now used by \textbf{Barangay 551, Zone 54, Manila}: targeted SMS announcements to filtered resident groups, households with printable RBI forms, and an audit trail.}
+          \resumeItem{Developed the Express backend (\textbf{$\sim$40 REST endpoints}, JWT auth, superadmin role checks) and integrated an \textbf{Android phone as a free SMS gateway} with delivery-status tracking, avoiding per-message API costs.}
+          \resumeItem{Implemented email-verified certificate requests with 6-digit, 10-minute codes held in a pending collection, so only verified requests reach the admin queue; deployed on Render.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{AI Support Desk for Shopify} $|$ \emph{n8n, Gemini API, Shopify GraphQL, Gmail API, Docker}}{2026}
+        \resumeItemListStart
+          \resumeItem{Built a 54-node \textbf{n8n} workflow that classifies support emails with Gemini, fetches the real order from the Shopify Admin GraphQL API, applies refund and return rules in code, and saves each reply as a Gmail draft for human approval.}
+          \resumeItem{Added a quality gate that flags risky tickets (low AI confidence, unhappy customers, high-value orders, repeat contacts) to Discord, plus a daily HTML report and an error-alert workflow; found and fixed 4 bugs in end-to-end testing.}
+        \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS & INTERESTS-----------
+\section{Skills \& Interests}
+\resumeSubHeadingListStart
+    \resumeItem{\textbf{Languages}{: Kotlin, Java, TypeScript, JavaScript, Python, SQL}}
+    \resumeItem{\textbf{Backend \& Frontend}{: Javalin, Spring Boot, Node.js, Express, FastAPI, REST APIs, React, Next.js, Tailwind CSS}}
+    \resumeItem{\textbf{Data}{: PostgreSQL (row-level security), MongoDB, Supabase, FAISS, BM25}}
+    \resumeItem{\textbf{Cloud \& DevOps}{: AWS (Lambda, IAM, Cognito), Cloudflare Workers \& R2, Docker, Vercel, Render, GitHub Actions, Git, Linux}}
+    \resumeItem{\textbf{AI \& Automation}{: RAG, LangChain, Sentence Transformers, llama.cpp, Gemini API, n8n, Make, Zapier, Playwright}}
+    \resumeItem{\textbf{Interests}{: Chess, tennis, weightlifting}}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Eulogio ``Amang'' Rodriguez Institute of Science and Technology (EARIST)}{Manila, Philippines}
+      {Bachelor of Science in Computer Science $|$ GPA: 1.49 (PH scale, $\approx$ 3.8/4.0)}{2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Thesis:} AmBOT, a retrieval-augmented chatbot that answers student questions from the university's own handbooks and manuals (sole developer of the system).}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\end{document}
