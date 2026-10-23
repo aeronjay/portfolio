@@ -46,8 +46,29 @@
 
         <section class="gallery" data-gallery aria-roledescription="carousel" aria-label="AI Support Desk workflow in n8n">
           <div class="gallery__viewport">
-            <figure class="gallery__slide" data-caption="The whole workflow in n8n: six labelled stages and the 8:00 report">
-              <img src="/projects/shopify-support-desk/canvas-overview.svg" alt="The full n8n canvas: six labelled sections from intake to delivery, with the daily report workflow underneath.">
+            <figure class="gallery__slide" data-caption="Walkthrough: a customer email becomes a drafted reply and a logged ticket">
+              <img src="/projects/shopify-support-desk/demo.gif" alt="Animated walkthrough: a sizing question arrives in Gmail, the n8n workflow runs through every stage, the reply appears as a Gmail draft in the same thread labelled AI Drafted, and the ticket shows up as a new row in Google Sheets.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Order status: the draft quotes the real carrier, tracking number and link from Shopify" hidden>
+              <img src="/projects/shopify-support-desk/email-and-draft.png" loading="lazy" alt="Gmail thread: the customer asks whether order #1001 has shipped, and the drafted reply below gives the DHL Express tracking number and tracking link from the Shopify order.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Complaint: labelled Needs Human, with a calm draft that promises no refund" hidden>
+              <img src="/projects/shopify-support-desk/needs-human.png" loading="lazy" alt="Gmail thread labelled Needs Human: an angry customer received the wrong size on order #1002, and the draft apologises and says a manager will follow up within 24 hours.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Discord: flagged tickets reach the support lead with the reasons" hidden>
+              <img src="/projects/shopify-support-desk/discord-alert.png" loading="lazy" alt="Discord alerts from the Support Desk bot for a complaint, an urgent shipping question and a high-value return, each listing the order, mood, urgency and why it needs review, followed by the daily summary.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Morning report: counts by category, flagged tickets and Gemini's insights" hidden>
+              <img src="/projects/shopify-support-desk/morning-report.png" loading="lazy" alt="HTML report email: 5 emails handled, 3 flagged for review, a table of tickets by category, three insights and one recommendation.">
+            </figure>
+            <figure class="gallery__slide" data-caption="Every ticket logged to Google Sheets: intent, category, sentiment, urgency, order" hidden>
+              <img src="/projects/shopify-support-desk/tickets-sheet.png" loading="lazy" alt="The Tickets sheet with six test tickets, showing subject, intent, category, sentiment, urgency and order number for each.">
+            </figure>
+            <figure class="gallery__slide" data-caption="The test run in n8n: the path each email took, start to finish" hidden>
+              <img src="/projects/shopify-support-desk/n8n-run.png" loading="lazy" alt="The n8n editor after a successful run, with the executed path highlighted through intake, classification, Shopify lookup, the product-question branch and the draft and log stage.">
+            </figure>
+            <figure class="gallery__slide" data-caption="The whole workflow in n8n: six labelled stages and the 8:00 report" hidden>
+              <img src="/projects/shopify-support-desk/canvas-overview.svg" loading="lazy" alt="The full n8n canvas: six labelled sections from intake to delivery, with the daily report workflow underneath.">
             </figure>
             <figure class="gallery__slide" data-caption="1 · Intake: poll Gmail, get a Shopify token, loop through emails, skip automated mail" hidden>
               <img src="/projects/shopify-support-desk/canvas-intake.svg" loading="lazy" alt="Intake section: Gmail trigger, Config, Shopify access token, a loop over emails, email cleaning and an automated-or-newsletter check.">
@@ -67,9 +88,9 @@
           </div>
 
           <div class="gallery__bar">
-            <p class="gallery__caption" aria-live="polite">The whole workflow in n8n: six labelled stages and the 8:00 report</p>
+            <p class="gallery__caption" aria-live="polite">Walkthrough: a customer email becomes a drafted reply and a logged ticket</p>
             <div class="gallery__controls">
-              <span class="gallery__count">1 / 6</span>
+              <span class="gallery__count">1 / 13</span>
               <button type="button" class="gallery__arrow" data-gallery-prev aria-label="Previous screen">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
@@ -80,12 +101,22 @@
           </div>
 
           <div class="gallery__thumbs">
-            <button type="button" class="gallery__thumb" aria-label="Show whole workflow" aria-current="true"><img src="/projects/shopify-support-desk/canvas-overview.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show walkthrough" aria-current="true">
+              <img src="/projects/shopify-support-desk/email-and-draft.png" loading="lazy" alt="">
+              <span class="gallery__thumb-badge" aria-hidden="true">GIF</span>
+            </button>
+            <button type="button" class="gallery__thumb" aria-label="Show order status draft"><img src="/projects/shopify-support-desk/email-and-draft.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show complaint draft"><img src="/projects/shopify-support-desk/needs-human.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show Discord alerts"><img src="/projects/shopify-support-desk/discord-alert.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show morning report"><img src="/projects/shopify-support-desk/morning-report.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show ticket log"><img src="/projects/shopify-support-desk/tickets-sheet.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show test run in n8n"><img src="/projects/shopify-support-desk/n8n-run.png" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show whole workflow"><img src="/projects/shopify-support-desk/canvas-overview.svg" loading="lazy" alt=""></button>
             <button type="button" class="gallery__thumb" aria-label="Show intake"><img src="/projects/shopify-support-desk/canvas-intake.svg" loading="lazy" alt=""></button>
             <button type="button" class="gallery__thumb" aria-label="Show understand and look up"><img src="/projects/shopify-support-desk/canvas-understand.svg" loading="lazy" alt=""></button>
             <button type="button" class="gallery__thumb" aria-label="Show decide"><img src="/projects/shopify-support-desk/canvas-decide.svg" loading="lazy" alt=""></button>
             <button type="button" class="gallery__thumb" aria-label="Show draft and deliver"><img src="/projects/shopify-support-desk/canvas-draft.svg" loading="lazy" alt=""></button>
-            <button type="button" class="gallery__thumb" aria-label="Show morning report"><img src="/projects/shopify-support-desk/canvas-report.svg" loading="lazy" alt=""></button>
+            <button type="button" class="gallery__thumb" aria-label="Show report stage"><img src="/projects/shopify-support-desk/canvas-report.svg" loading="lazy" alt=""></button>
           </div>
         </section>
       </header>
@@ -99,7 +130,7 @@
           <div class="project-section__body text-muted">
             <p>Small online stores get the same few emails over and over: where is my order, can I return this, does this come in another size. The answers are already in Shopify. Someone just has to open the order, check the policy and type the reply.</p>
             <p>This n8n workflow does that groundwork. It reads each new support email, works out what the customer wants and how upset they are, looks up their real order and products in Shopify, applies the store's rules, and saves a reply as a Gmail draft in the customer's thread. A person reads it and presses send. Tickets that need judgment ping the support lead on Discord, and the owner gets a short report every morning.</p>
-            <p class="text-muted" style="font-size: var(--text-sm);">The workflow runs against a Shopify development store with test orders. The canvas views above are drawn from the exported workflow file, with the same nodes, positions and connections as in the n8n editor.</p>
+            <p class="text-muted" style="font-size: var(--text-sm);">The screenshots above come from a test run against a Shopify development store with three test orders, using emails sent from a second Gmail account. Test email addresses are blurred. The canvas views at the end are drawn from the exported workflow file, with the same nodes, positions and connections as in the n8n editor.</p>
           </div>
         </section>
 
@@ -157,7 +188,8 @@
             <p class="text-muted">Drafts-only means a person still presses send on every email, so the store saves the lookup and writing time but not the review. I chose that on purpose: it's the safe default until the drafts have a track record. Separately, the first version sent alerts through Telegram, but the Telegram API was unreachable from my network, so I moved alerts to Discord webhooks. That also removed a bot token from the setup.</p>
 
             <h3>The Result</h3>
-            <p class="text-muted">The workflow is built end to end and documented, with the Gmail and Google Sheets connections tested against my own account. Next is a full run on a Shopify development store with a set of test emails covering each intent. Screenshots of that run will join the workflow views above.</p>
+            <p class="text-muted">I ran it end to end on a Shopify development store with six test emails, one per scenario. Each one landed where the rules said it should. The shipping question got a draft with the real DHL tracking link. The sizing question was answered from the product description. The angry complaint and the $180 return were labelled Needs Human and posted to Discord. The out-of-office auto-reply was skipped. The morning report counted 5 emails handled and 3 flagged.</p>
+            <p class="text-muted">The test runs also turned up four bugs, and I fixed each one in the workflow. Product search returned nothing for plurals ("linen shirts" didn't match "Linen Shirt"), so keywords are now stemmed into prefix searches. A product without a store URL put the word "null" in a reply, so empty links are dropped and the quality check now catches "null". Gemini added its own sign-off on top of the store signature. And the repeat-contact rule flagged any second email from the same customer, so now it only counts a ticket about the same order or the same conversation.</p>
           </div>
         </section>
 
